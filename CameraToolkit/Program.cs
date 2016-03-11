@@ -12,6 +12,7 @@ namespace Toolkit
 
         internal static FilterInfoCollection devices;
         internal static List<string> activeDevices;
+        internal static string sessionId;
 
         internal static List<string> imageFiles = new List<string>(new string[] { ".jpg", ".jpeg", ".jpe", ".jfif", ".png", ".gif" });
 
@@ -22,6 +23,7 @@ namespace Toolkit
         static void Main()
         {
 
+            sessionId = DateTime.Now.TimeOfDay.Ticks.ToString();
             activeDevices = new List<string>();
             devices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
 

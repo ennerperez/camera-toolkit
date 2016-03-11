@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing.Pictograms;
+using System.IO;
 
 namespace Toolkit.Forms
 {
@@ -31,6 +32,7 @@ namespace Toolkit.Forms
             toolStripButtonCapture.Image = MaterialDesign.GetImage(MaterialDesign.IconType.camera, 48, Color.White);
             toolStripButtonSave.Image = MaterialDesign.GetImage(MaterialDesign.IconType.save, 48, Color.White);
             toolStripButtonSettings.Image = MaterialDesign.GetImage(MaterialDesign.IconType.settings, 48, Color.White);
+            toolStripButtonFolder.Image = MaterialDesign.GetImage(MaterialDesign.IconType.folder_open, 48, Color.White);
 
             toolStripButtonAbout.Image = MaterialDesign.GetImage(MaterialDesign.IconType.info, 48, Color.White);
             toolStripButtonClose.Image = MaterialDesign.GetImage(MaterialDesign.IconType.close, 48, Color.White);
@@ -82,10 +84,10 @@ namespace Toolkit.Forms
         public VideoCaptureDevice VideSource { get; set; }
 
         #region Clipboard
-        
+
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (pictureBoxCamera.Image!= null)
+            if (pictureBoxCamera.Image != null)
                 Clipboard.SetImage(pictureBoxCamera.Image);
         }
 
@@ -98,6 +100,7 @@ namespace Toolkit.Forms
 
         private void FormViewer_Shown(object sender, EventArgs e)
         {
+            ToolStripMenuItem defaultDevice = null;
             foreach (var item in Program.getDevices())
             {
                 var _item = new ToolStripMenuItem(item.Value);
@@ -105,7 +108,16 @@ namespace Toolkit.Forms
                 _item.Click += _item_Click;
                 _item.Image = MaterialDesign.GetImage(MaterialDesign.IconType.videocam, 48, toolStripMenu.BackColor);
                 toolStripButtonDevices.DropDownItems.Add(_item);
+
+                if (Properties.Settings.Default.AutoStart && item.Key == Properties.Settings.Default.DefaultDevice)
+                    defaultDevice = _item;
+
             }
+
+            if (defaultDevice != null)
+                defaultDevice.PerformClick();
+
+
         }
 
         public void captureFrame(object sender, NewFrameEventArgs eventArgs)
@@ -140,8 +152,29 @@ namespace Toolkit.Forms
         {
             if (IsRunning())
             {
-                saveFileDialogImage.FileName = string.Format("{0}_{1}.jpg", DeviceName.Replace(' ', '_'), DateTime.Now.ToString("yyyyMMdd"));
-                saveFileDialogImage.ShowDialog();
+
+                var i = 1;
+                string filename = string.Empty;
+
+                while (filename == string.Empty || File.Exists(filename))
+                {
+                    filename = string.Format("{0}_{1}_{2}_{3}.jpg", DeviceName.Replace(' ', '_'), Program.sessionId, DateTime.Now.ToString("yyyyMMdd"), i.ToString());
+                    if (Properties.Settings.Default.AutoSave &&
+                        !string.IsNullOrEmpty(Properties.Settings.Default.DefaultPath) &&
+                        Directory.Exists(Properties.Settings.Default.DefaultPath))
+                        filename = Path.Combine(Properties.Settings.Default.DefaultPath, filename);
+                    i++;
+                }
+
+                saveFileDialogImage.FileName = filename;
+
+                if (Properties.Settings.Default.AutoSave &&
+                    !string.IsNullOrEmpty(Properties.Settings.Default.DefaultPath) &&
+                    Directory.Exists(Properties.Settings.Default.DefaultPath))
+                    saveFileDialogImage_FileOk(sender, new CancelEventArgs());
+                else
+                    saveFileDialogImage.ShowDialog();
+
             }
         }
 
@@ -164,6 +197,11 @@ namespace Toolkit.Forms
         {
             if (IsRunning())
                 VideSource.DisplayPropertyPage(this.Handle);
+            else
+            {
+                var child = new FormSettings();
+                child.ShowDialog();
+            }
         }
 
         private void disconnectToolStripMenuItem_Click(object sender, EventArgs e)
@@ -193,6 +231,24 @@ namespace Toolkit.Forms
         {
             var child = new FormAbout();
             child.ShowDialog();
+        }
+
+        private void toolStripButtonFolder_Click(object sender, EventArgs e)
+        {
+            // Settings
+            if (string.IsNullOrEmpty(Properties.Settings.Default.DefaultPath) ||
+                !Directory.Exists(Properties.Settings.Default.DefaultPath))
+            {
+                Properties.Settings.Default.AutoSave = false;
+                Properties.Settings.Default.DefaultPath = string.Empty;
+                Properties.Settings.Default.Save();
+
+                MessageBox.Show("The selected path don't exist anymore.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+                System.Diagnostics.Process.Start(Properties.Settings.Default.DefaultPath);
+
         }
     }
 }
