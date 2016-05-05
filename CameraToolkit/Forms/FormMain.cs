@@ -19,6 +19,9 @@ namespace Toolkit.Forms
         {
             InitializeComponent();
 
+            //var img = MaterialDesign.GetImage(MaterialDesign.IconType.linked_camera, 256, Color.White);
+            //img.Save(@"D:\Developments\GitHub\camera-toolkit\.editoricon.png");
+
             // saveFileDialogImage
             saveFileDialogImage.DefaultExt = Program.imageFiles[0];
             saveFileDialogImage.Filter = string.Format(saveFileDialogImage.Filter,
@@ -32,6 +35,12 @@ namespace Toolkit.Forms
             toolStripButtonCapture.Image = MaterialDesign.GetImage(MaterialDesign.IconType.camera, 48, Color.White);
             toolStripButtonSave.Image = MaterialDesign.GetImage(MaterialDesign.IconType.save, 48, Color.White);
             toolStripButtonSettings.Image = MaterialDesign.GetImage(MaterialDesign.IconType.settings, 48, Color.White);
+
+            toolStripMenuItemCamera.Image = MaterialDesign.GetImage(MaterialDesign.IconType.settings_brightness, 48, toolStripMenu.BackColor);
+            toolStripMenuItemSystem.Image = MaterialDesign.GetImage(MaterialDesign.IconType.settings_system_daydream, 48, toolStripMenu.BackColor);
+
+            toolStripButtonGallery.Image = MaterialDesign.GetImage(MaterialDesign.IconType.image, 48, Color.White);
+
             toolStripButtonFolder.Image = MaterialDesign.GetImage(MaterialDesign.IconType.folder_open, 48, Color.White);
 
             toolStripButtonAbout.Image = MaterialDesign.GetImage(MaterialDesign.IconType.info, 48, Color.White);
@@ -193,17 +202,6 @@ namespace Toolkit.Forms
             }
         }
 
-        private void toolStripButtonSettings_Click(object sender, EventArgs e)
-        {
-            if (IsRunning())
-                VideSource.DisplayPropertyPage(this.Handle);
-            else
-            {
-                var child = new FormSettings();
-                child.ShowDialog();
-            }
-        }
-
         private void disconnectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (IsRunning())
@@ -248,6 +246,23 @@ namespace Toolkit.Forms
             }
             else
                 System.Diagnostics.Process.Start(Properties.Settings.Default.DefaultPath);
+
+        }
+
+        private void toolStripMenuItemCamera_Click(object sender, EventArgs e)
+        {
+            if (IsRunning())
+                VideSource.DisplayPropertyPage(this.Handle);
+        }
+
+        private void toolStripMenuItemSystem_Click(object sender, EventArgs e)
+        {
+            var child = new FormSettings();
+            child.ShowDialog();
+        }
+
+        private void toolStripButtonGallery_Click(object sender, EventArgs e)
+        {
 
         }
     }
