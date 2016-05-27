@@ -5,11 +5,23 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraToolkit", "CameraToolkit\CameraToolkit.csproj", "{04B1CED5-D352-4438-A849-608838453DCC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D5360716-B88F-4567-B486-B455B97D8FCB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{D5360716-B88F-4567-B486-B455B97D8FCB}"
 	ProjectSection(SolutionItems) = preProject
 		CHANGELOG.md = CHANGELOG.md
 		LICENSE = LICENSE
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A74329A9-78D1-47FD-8C9F-2E23C9DE56C5}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".files", ".files", "{3272744A-9CF1-451C-8F22-261FA59C29BB}"
+	ProjectSection(SolutionItems) = preProject
+		.editoricon.png = .editoricon.png
+		.gitignore = .gitignore
 	EndProjectSection
 EndProject
 Global

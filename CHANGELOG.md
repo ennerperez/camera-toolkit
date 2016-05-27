@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [1.0.3] - [2016-05-27]
+## [1.0.4] - [2016-05-27]
 ### Changed
 - AppIcon Update
 - Ask for album name
