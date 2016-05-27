@@ -23,6 +23,7 @@ namespace Toolkit.Forms
             comboBoxDevices.DataBindings.Add("Enabled", checkBoxAutoStart, "Checked");
             textBoxAutoSavePath.DataBindings.Add("Enabled", checkBoxAutoSave, "Checked");
             buttonExamine.DataBindings.Add("Enabled", checkBoxAutoSave, "Checked");
+            checkBoxAlbumName.DataBindings.Add("Enabled", checkBoxAutoSave, "Checked");
 
         }
 
@@ -73,5 +74,6 @@ namespace Toolkit.Forms
             if (!string.IsNullOrEmpty(Properties.Settings.Default.DefaultDevice) && comboBoxDevices.Items.Count > 0)
                 comboBoxDevices.SelectedValue = Properties.Settings.Default.DefaultDevice;
         }
+        
     }
 }

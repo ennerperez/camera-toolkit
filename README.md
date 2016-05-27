@@ -4,6 +4,7 @@ Camera Toolkit is an simple application for fast capturing images from cameras.
 
 # Roadmap
 - [x] Settings separations
+- [x] Album name
 - [ ] Gallery management
 
 ## Table of contents

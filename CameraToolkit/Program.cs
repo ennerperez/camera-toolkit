@@ -14,6 +14,8 @@ namespace Toolkit
         internal static List<string> activeDevices;
         internal static string sessionId;
 
+        internal static string albumName;
+
         internal static List<string> imageFiles = new List<string>(new string[] { ".jpg", ".jpeg", ".jpe", ".jfif", ".png", ".gif" });
 
         /// <summary>
@@ -47,5 +49,53 @@ namespace Toolkit
             return result;
         }
 
+        internal static DialogResult ShowInputDialog(ref string input, string caption)
+        {
+            System.Drawing.Size size = new System.Drawing.Size(200, 70);
+            Form inputBox = new Form();
+
+            inputBox.Padding = new Padding(6);
+            inputBox.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            inputBox.ShowIcon = false;
+            inputBox.ShowInTaskbar = false;
+            inputBox.MaximizeBox = false;
+            inputBox.MinimizeBox = false;
+            inputBox.ClientSize = size;
+            inputBox.Text = caption;
+            inputBox.StartPosition = FormStartPosition.CenterParent;
+
+            System.Windows.Forms.TextBox textBox = new TextBox();
+            textBox.Dock = DockStyle.Top;
+            textBox.Size = new System.Drawing.Size(size.Width - 10, 23);
+            textBox.Location = new System.Drawing.Point(5, 5);
+            textBox.Text = input;
+            inputBox.Controls.Add(textBox);
+
+            Button okButton = new Button();
+            okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            okButton.Name = "okButton";
+            okButton.Size = new System.Drawing.Size(75, 23);
+            okButton.Text = "&OK";
+            okButton.Location = new System.Drawing.Point(size.Width - 80 - 80, 39);
+            inputBox.Controls.Add(okButton);
+
+            Button cancelButton = new Button();
+            cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new System.Drawing.Size(75, 23);
+            cancelButton.Text = "&Cancel";
+            cancelButton.Location = new System.Drawing.Point(size.Width - 80, 39);
+            inputBox.Controls.Add(cancelButton);
+
+            inputBox.AcceptButton = okButton;
+            inputBox.CancelButton = cancelButton;
+
+            DialogResult result = inputBox.ShowDialog();
+            input = textBox.Text;
+            return result;
+        }
+
     }
+
+    
 }

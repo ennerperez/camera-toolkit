@@ -80,6 +80,10 @@ namespace Toolkit.Forms
                 VideSource.Start();
 
                 disconnectToolStripMenuItem.Enabled = IsRunning();
+
+                if (Properties.Settings.Default.AskAlbumName)
+                    Program.ShowInputDialog(ref Program.albumName, "Album name");
+
             }
             catch (Exception ex)
             {
@@ -171,7 +175,9 @@ namespace Toolkit.Forms
                     if (Properties.Settings.Default.AutoSave &&
                         !string.IsNullOrEmpty(Properties.Settings.Default.DefaultPath) &&
                         Directory.Exists(Properties.Settings.Default.DefaultPath))
-                        filename = Path.Combine(Properties.Settings.Default.DefaultPath, filename);
+
+                        filename = Path.Combine(Properties.Settings.Default.DefaultPath, Program.albumName, filename);
+
                     i++;
                 }
 
@@ -193,6 +199,10 @@ namespace Toolkit.Forms
             {
                 try
                 {
+                    var fileInfo = new FileInfo(saveFileDialogImage.FileName);
+                    if (!fileInfo.Directory.Exists)
+                        fileInfo.Directory.Create();
+
                     pictureBoxCamera.Image.Save(saveFileDialogImage.FileName);
                 }
                 catch (Exception ex)
@@ -222,6 +232,8 @@ namespace Toolkit.Forms
             toolStripButtonCapture.Checked = paused;
 
             disconnectToolStripMenuItem.Enabled = IsRunning();
+
+            Program.albumName = string.Empty;
 
         }
 

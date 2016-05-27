@@ -31,16 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettings));
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonAccept = new System.Windows.Forms.Button();
-            this.checkBoxAutoStart = new System.Windows.Forms.CheckBox();
             this.comboBoxDevices = new System.Windows.Forms.ComboBox();
-            this.checkBoxAutoSave = new System.Windows.Forms.CheckBox();
-            this.textBoxAutoSavePath = new System.Windows.Forms.TextBox();
             this.buttonExamine = new System.Windows.Forms.Button();
             this.folderBrowserDialogAutoSavePath = new System.Windows.Forms.FolderBrowserDialog();
             this.labelAutoSavePath = new System.Windows.Forms.Label();
             this.label1AutoStartDevice = new System.Windows.Forms.Label();
             this.groupBoxAutostart = new System.Windows.Forms.GroupBox();
+            this.checkBoxAutoStart = new System.Windows.Forms.CheckBox();
             this.groupBoxAutoSave = new System.Windows.Forms.GroupBox();
+            this.checkBoxAlbumName = new System.Windows.Forms.CheckBox();
+            this.checkBoxAutoSave = new System.Windows.Forms.CheckBox();
+            this.textBoxAutoSavePath = new System.Windows.Forms.TextBox();
             this.groupBoxAutostart.SuspendLayout();
             this.groupBoxAutoSave.SuspendLayout();
             this.SuspendLayout();
@@ -64,21 +65,9 @@
             this.buttonAccept.Name = "buttonAccept";
             this.buttonAccept.Size = new System.Drawing.Size(75, 23);
             this.buttonAccept.TabIndex = 3;
-            this.buttonAccept.Text = "&Ok";
+            this.buttonAccept.Text = "&OK";
             this.buttonAccept.UseVisualStyleBackColor = true;
             this.buttonAccept.Click += new System.EventHandler(this.buttonAccept_Click);
-            // 
-            // checkBoxAutoStart
-            // 
-            this.checkBoxAutoStart.AutoSize = true;
-            this.checkBoxAutoStart.Checked = global::Toolkit.Properties.Settings.Default.AutoStart;
-            this.checkBoxAutoStart.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Toolkit.Properties.Settings.Default, "AutoStart", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBoxAutoStart.Location = new System.Drawing.Point(6, 0);
-            this.checkBoxAutoStart.Name = "checkBoxAutoStart";
-            this.checkBoxAutoStart.Size = new System.Drawing.Size(103, 17);
-            this.checkBoxAutoStart.TabIndex = 0;
-            this.checkBoxAutoStart.Text = "Auto&start device";
-            this.checkBoxAutoStart.UseVisualStyleBackColor = true;
             // 
             // comboBoxDevices
             // 
@@ -91,30 +80,6 @@
             this.comboBoxDevices.Name = "comboBoxDevices";
             this.comboBoxDevices.Size = new System.Drawing.Size(345, 21);
             this.comboBoxDevices.TabIndex = 2;
-            // 
-            // checkBoxAutoSave
-            // 
-            this.checkBoxAutoSave.AutoSize = true;
-            this.checkBoxAutoSave.Checked = global::Toolkit.Properties.Settings.Default.AutoSave;
-            this.checkBoxAutoSave.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Toolkit.Properties.Settings.Default, "AutoSave", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBoxAutoSave.Location = new System.Drawing.Point(6, 0);
-            this.checkBoxAutoSave.Name = "checkBoxAutoSave";
-            this.checkBoxAutoSave.Size = new System.Drawing.Size(115, 17);
-            this.checkBoxAutoSave.TabIndex = 0;
-            this.checkBoxAutoSave.Text = "Auto&save captures";
-            this.checkBoxAutoSave.UseVisualStyleBackColor = true;
-            // 
-            // textBoxAutoSavePath
-            // 
-            this.textBoxAutoSavePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAutoSavePath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Toolkit.Properties.Settings.Default, "DefaultPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBoxAutoSavePath.Enabled = false;
-            this.textBoxAutoSavePath.Location = new System.Drawing.Point(9, 43);
-            this.textBoxAutoSavePath.Name = "textBoxAutoSavePath";
-            this.textBoxAutoSavePath.Size = new System.Drawing.Size(345, 20);
-            this.textBoxAutoSavePath.TabIndex = 2;
-            this.textBoxAutoSavePath.Text = global::Toolkit.Properties.Settings.Default.DefaultPath;
             // 
             // buttonExamine
             // 
@@ -159,10 +124,23 @@
             this.groupBoxAutostart.TabIndex = 0;
             this.groupBoxAutostart.TabStop = false;
             // 
+            // checkBoxAutoStart
+            // 
+            this.checkBoxAutoStart.AutoSize = true;
+            this.checkBoxAutoStart.Checked = global::Toolkit.Properties.Settings.Default.AutoStart;
+            this.checkBoxAutoStart.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Toolkit.Properties.Settings.Default, "AutoStart", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBoxAutoStart.Location = new System.Drawing.Point(6, 0);
+            this.checkBoxAutoStart.Name = "checkBoxAutoStart";
+            this.checkBoxAutoStart.Size = new System.Drawing.Size(103, 17);
+            this.checkBoxAutoStart.TabIndex = 0;
+            this.checkBoxAutoStart.Text = "Auto&start device";
+            this.checkBoxAutoStart.UseVisualStyleBackColor = true;
+            // 
             // groupBoxAutoSave
             // 
             this.groupBoxAutoSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxAutoSave.Controls.Add(this.checkBoxAlbumName);
             this.groupBoxAutoSave.Controls.Add(this.checkBoxAutoSave);
             this.groupBoxAutoSave.Controls.Add(this.labelAutoSavePath);
             this.groupBoxAutoSave.Controls.Add(this.buttonExamine);
@@ -172,6 +150,43 @@
             this.groupBoxAutoSave.Size = new System.Drawing.Size(360, 100);
             this.groupBoxAutoSave.TabIndex = 2;
             this.groupBoxAutoSave.TabStop = false;
+            // 
+            // checkBoxAlbumName
+            // 
+            this.checkBoxAlbumName.AutoSize = true;
+            this.checkBoxAlbumName.Checked = global::Toolkit.Properties.Settings.Default.AskAlbumName;
+            this.checkBoxAlbumName.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Toolkit.Properties.Settings.Default, "AskAlbumName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBoxAlbumName.Enabled = false;
+            this.checkBoxAlbumName.Location = new System.Drawing.Point(9, 73);
+            this.checkBoxAlbumName.Name = "checkBoxAlbumName";
+            this.checkBoxAlbumName.Size = new System.Drawing.Size(119, 17);
+            this.checkBoxAlbumName.TabIndex = 0;
+            this.checkBoxAlbumName.Text = "Ask for al&bum name";
+            this.checkBoxAlbumName.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAutoSave
+            // 
+            this.checkBoxAutoSave.AutoSize = true;
+            this.checkBoxAutoSave.Checked = global::Toolkit.Properties.Settings.Default.AutoSave;
+            this.checkBoxAutoSave.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Toolkit.Properties.Settings.Default, "AutoSave", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBoxAutoSave.Location = new System.Drawing.Point(6, 0);
+            this.checkBoxAutoSave.Name = "checkBoxAutoSave";
+            this.checkBoxAutoSave.Size = new System.Drawing.Size(115, 17);
+            this.checkBoxAutoSave.TabIndex = 0;
+            this.checkBoxAutoSave.Text = "Auto&save captures";
+            this.checkBoxAutoSave.UseVisualStyleBackColor = true;
+            // 
+            // textBoxAutoSavePath
+            // 
+            this.textBoxAutoSavePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxAutoSavePath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Toolkit.Properties.Settings.Default, "DefaultPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBoxAutoSavePath.Enabled = false;
+            this.textBoxAutoSavePath.Location = new System.Drawing.Point(9, 43);
+            this.textBoxAutoSavePath.Name = "textBoxAutoSavePath";
+            this.textBoxAutoSavePath.Size = new System.Drawing.Size(345, 20);
+            this.textBoxAutoSavePath.TabIndex = 2;
+            this.textBoxAutoSavePath.Text = global::Toolkit.Properties.Settings.Default.DefaultPath;
             // 
             // FormSettings
             // 
@@ -217,5 +232,6 @@
         private System.Windows.Forms.Label label1AutoStartDevice;
         private System.Windows.Forms.GroupBox groupBoxAutostart;
         private System.Windows.Forms.GroupBox groupBoxAutoSave;
+        private System.Windows.Forms.CheckBox checkBoxAlbumName;
     }
 }

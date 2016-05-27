@@ -70,5 +70,17 @@ namespace Toolkit.Properties {
                 this["DefaultDevice"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AskAlbumName {
+            get {
+                return ((bool)(this["AskAlbumName"]));
+            }
+            set {
+                this["AskAlbumName"] = value;
+            }
+        }
     }
 }
