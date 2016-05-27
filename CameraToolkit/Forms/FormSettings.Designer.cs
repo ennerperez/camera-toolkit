@@ -48,167 +48,114 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(297, 286);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 0;
-            this.buttonCancel.Text = "&Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonAccept
             // 
-            this.buttonAccept.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAccept.Location = new System.Drawing.Point(216, 286);
+            resources.ApplyResources(this.buttonAccept, "buttonAccept");
             this.buttonAccept.Name = "buttonAccept";
-            this.buttonAccept.Size = new System.Drawing.Size(75, 23);
-            this.buttonAccept.TabIndex = 3;
-            this.buttonAccept.Text = "&OK";
             this.buttonAccept.UseVisualStyleBackColor = true;
             this.buttonAccept.Click += new System.EventHandler(this.buttonAccept_Click);
             // 
             // comboBoxDevices
             // 
-            this.comboBoxDevices.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.comboBoxDevices, "comboBoxDevices");
             this.comboBoxDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDevices.Enabled = false;
             this.comboBoxDevices.FormattingEnabled = true;
-            this.comboBoxDevices.Location = new System.Drawing.Point(9, 40);
             this.comboBoxDevices.Name = "comboBoxDevices";
-            this.comboBoxDevices.Size = new System.Drawing.Size(345, 21);
-            this.comboBoxDevices.TabIndex = 2;
             // 
             // buttonExamine
             // 
-            this.buttonExamine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExamine.Enabled = false;
-            this.buttonExamine.Location = new System.Drawing.Point(279, 69);
+            resources.ApplyResources(this.buttonExamine, "buttonExamine");
             this.buttonExamine.Name = "buttonExamine";
-            this.buttonExamine.Size = new System.Drawing.Size(75, 23);
-            this.buttonExamine.TabIndex = 3;
-            this.buttonExamine.Text = "&Examine...";
             this.buttonExamine.UseVisualStyleBackColor = true;
             this.buttonExamine.Click += new System.EventHandler(this.buttonExamine_Click);
             // 
+            // folderBrowserDialogAutoSavePath
+            // 
+            resources.ApplyResources(this.folderBrowserDialogAutoSavePath, "folderBrowserDialogAutoSavePath");
+            // 
             // labelAutoSavePath
             // 
-            this.labelAutoSavePath.AutoSize = true;
-            this.labelAutoSavePath.Location = new System.Drawing.Point(6, 24);
+            resources.ApplyResources(this.labelAutoSavePath, "labelAutoSavePath");
             this.labelAutoSavePath.Name = "labelAutoSavePath";
-            this.labelAutoSavePath.Size = new System.Drawing.Size(87, 13);
-            this.labelAutoSavePath.TabIndex = 1;
-            this.labelAutoSavePath.Text = "&Destination path:";
             // 
             // label1AutoStartDevice
             // 
-            this.label1AutoStartDevice.AutoSize = true;
-            this.label1AutoStartDevice.Location = new System.Drawing.Point(6, 24);
+            resources.ApplyResources(this.label1AutoStartDevice, "label1AutoStartDevice");
             this.label1AutoStartDevice.Name = "label1AutoStartDevice";
-            this.label1AutoStartDevice.Size = new System.Drawing.Size(79, 13);
-            this.label1AutoStartDevice.TabIndex = 1;
-            this.label1AutoStartDevice.Text = "&Default device:";
             // 
             // groupBoxAutostart
             // 
-            this.groupBoxAutostart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBoxAutostart, "groupBoxAutostart");
             this.groupBoxAutostart.Controls.Add(this.checkBoxAutoStart);
             this.groupBoxAutostart.Controls.Add(this.label1AutoStartDevice);
             this.groupBoxAutostart.Controls.Add(this.comboBoxDevices);
-            this.groupBoxAutostart.Location = new System.Drawing.Point(12, 12);
             this.groupBoxAutostart.Name = "groupBoxAutostart";
-            this.groupBoxAutostart.Size = new System.Drawing.Size(360, 74);
-            this.groupBoxAutostart.TabIndex = 0;
             this.groupBoxAutostart.TabStop = false;
             // 
             // checkBoxAutoStart
             // 
-            this.checkBoxAutoStart.AutoSize = true;
+            resources.ApplyResources(this.checkBoxAutoStart, "checkBoxAutoStart");
             this.checkBoxAutoStart.Checked = global::Toolkit.Properties.Settings.Default.AutoStart;
             this.checkBoxAutoStart.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Toolkit.Properties.Settings.Default, "AutoStart", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBoxAutoStart.Location = new System.Drawing.Point(6, 0);
             this.checkBoxAutoStart.Name = "checkBoxAutoStart";
-            this.checkBoxAutoStart.Size = new System.Drawing.Size(103, 17);
-            this.checkBoxAutoStart.TabIndex = 0;
-            this.checkBoxAutoStart.Text = "Auto&start device";
             this.checkBoxAutoStart.UseVisualStyleBackColor = true;
             // 
             // groupBoxAutoSave
             // 
-            this.groupBoxAutoSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBoxAutoSave, "groupBoxAutoSave");
             this.groupBoxAutoSave.Controls.Add(this.checkBoxAlbumName);
             this.groupBoxAutoSave.Controls.Add(this.checkBoxAutoSave);
             this.groupBoxAutoSave.Controls.Add(this.labelAutoSavePath);
             this.groupBoxAutoSave.Controls.Add(this.buttonExamine);
             this.groupBoxAutoSave.Controls.Add(this.textBoxAutoSavePath);
-            this.groupBoxAutoSave.Location = new System.Drawing.Point(12, 92);
             this.groupBoxAutoSave.Name = "groupBoxAutoSave";
-            this.groupBoxAutoSave.Size = new System.Drawing.Size(360, 100);
-            this.groupBoxAutoSave.TabIndex = 2;
             this.groupBoxAutoSave.TabStop = false;
             // 
             // checkBoxAlbumName
             // 
-            this.checkBoxAlbumName.AutoSize = true;
+            resources.ApplyResources(this.checkBoxAlbumName, "checkBoxAlbumName");
             this.checkBoxAlbumName.Checked = global::Toolkit.Properties.Settings.Default.AskAlbumName;
             this.checkBoxAlbumName.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Toolkit.Properties.Settings.Default, "AskAlbumName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBoxAlbumName.Enabled = false;
-            this.checkBoxAlbumName.Location = new System.Drawing.Point(9, 73);
             this.checkBoxAlbumName.Name = "checkBoxAlbumName";
-            this.checkBoxAlbumName.Size = new System.Drawing.Size(119, 17);
-            this.checkBoxAlbumName.TabIndex = 0;
-            this.checkBoxAlbumName.Text = "Ask for al&bum name";
             this.checkBoxAlbumName.UseVisualStyleBackColor = true;
             // 
             // checkBoxAutoSave
             // 
-            this.checkBoxAutoSave.AutoSize = true;
+            resources.ApplyResources(this.checkBoxAutoSave, "checkBoxAutoSave");
             this.checkBoxAutoSave.Checked = global::Toolkit.Properties.Settings.Default.AutoSave;
             this.checkBoxAutoSave.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Toolkit.Properties.Settings.Default, "AutoSave", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBoxAutoSave.Location = new System.Drawing.Point(6, 0);
             this.checkBoxAutoSave.Name = "checkBoxAutoSave";
-            this.checkBoxAutoSave.Size = new System.Drawing.Size(115, 17);
-            this.checkBoxAutoSave.TabIndex = 0;
-            this.checkBoxAutoSave.Text = "Auto&save captures";
             this.checkBoxAutoSave.UseVisualStyleBackColor = true;
             // 
             // textBoxAutoSavePath
             // 
-            this.textBoxAutoSavePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.textBoxAutoSavePath, "textBoxAutoSavePath");
             this.textBoxAutoSavePath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Toolkit.Properties.Settings.Default, "DefaultPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBoxAutoSavePath.Enabled = false;
-            this.textBoxAutoSavePath.Location = new System.Drawing.Point(9, 43);
             this.textBoxAutoSavePath.Name = "textBoxAutoSavePath";
-            this.textBoxAutoSavePath.Size = new System.Drawing.Size(345, 20);
-            this.textBoxAutoSavePath.TabIndex = 2;
             this.textBoxAutoSavePath.Text = global::Toolkit.Properties.Settings.Default.DefaultPath;
             // 
             // FormSettings
             // 
             this.AcceptButton = this.buttonAccept;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(384, 321);
             this.Controls.Add(this.groupBoxAutoSave);
             this.Controls.Add(this.groupBoxAutostart);
             this.Controls.Add(this.buttonAccept);
             this.Controls.Add(this.buttonCancel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(400, 360);
             this.Name = "FormSettings";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Settings";
             this.Load += new System.EventHandler(this.FormSettings_Load);
             this.groupBoxAutostart.ResumeLayout(false);
             this.groupBoxAutostart.PerformLayout();

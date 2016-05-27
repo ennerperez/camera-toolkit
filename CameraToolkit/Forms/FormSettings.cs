@@ -39,7 +39,7 @@ namespace Toolkit.Forms
 
             if (checkBoxAutoSave.Checked && !System.IO.Directory.Exists(textBoxAutoSavePath.Text))
             {
-                var question = MessageBox.Show("The selected path don't exist, do you want to create?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var question = MessageBox.Show(Toolkit.Messages.PathNotFoundAndCreate, Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (question == DialogResult.Yes)
                 {
                     try
@@ -54,7 +54,7 @@ namespace Toolkit.Forms
                 }
                 else
                 {
-                    MessageBox.Show("The selected path is invalid.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Toolkit.Messages.PathInvalid, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }

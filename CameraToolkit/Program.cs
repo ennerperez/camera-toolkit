@@ -75,7 +75,7 @@ namespace Toolkit
             okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             okButton.Name = "okButton";
             okButton.Size = new System.Drawing.Size(75, 23);
-            okButton.Text = "&OK";
+            okButton.Text = Toolkit.Messages.OK;
             okButton.Location = new System.Drawing.Point(size.Width - 80 - 80, 39);
             inputBox.Controls.Add(okButton);
 
@@ -83,7 +83,7 @@ namespace Toolkit
             cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new System.Drawing.Size(75, 23);
-            cancelButton.Text = "&Cancel";
+            cancelButton.Text = Toolkit.Messages.Cancel;
             cancelButton.Location = new System.Drawing.Point(size.Width - 80, 39);
             inputBox.Controls.Add(cancelButton);
 

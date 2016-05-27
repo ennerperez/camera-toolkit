@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - AppIcon Update
 - Ask for album name
+- Spanish translation
 
 ## [1.0.1] - [2016-03-10]
 ### Changed

@@ -82,7 +82,7 @@ namespace Toolkit.Forms
                 disconnectToolStripMenuItem.Enabled = IsRunning();
 
                 if (Properties.Settings.Default.AskAlbumName)
-                    Program.ShowInputDialog(ref Program.albumName, "Album name");
+                    Program.ShowInputDialog(ref Program.albumName, Toolkit.Messages.AlbumName);
 
             }
             catch (Exception ex)
@@ -253,7 +253,7 @@ namespace Toolkit.Forms
                 Properties.Settings.Default.DefaultPath = string.Empty;
                 Properties.Settings.Default.Save();
 
-                MessageBox.Show("The selected path don't exist anymore.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Toolkit.Messages.PathNotFound, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else
