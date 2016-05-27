@@ -1,10 +1,15 @@
+![logo](https://raw.githubusercontent.com/ennerperez/camera-toolkit/master/.editoricon.png)
+
 # Camera Toolkit for Devigners
 
 Camera Toolkit is an simple application for fast capturing images from cameras.
 
+[![Build status](https://ci.appveyor.com/api/projects/status/59jrgu2cvdorne9u?svg=true)](https://ci.appveyor.com/project/ennerperez/camera-toolkit)
+
 # Roadmap
 - [x] Settings separations
 - [x] Album name
+- [x] Spanish translation
 - [ ] Gallery management
 
 ## Table of contents
