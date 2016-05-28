@@ -29,7 +29,7 @@ See the [changelog](CHANGELOG.md) for changes.
 
 - CameraToolkit executable
 
-## Quick start
+### Quick start
 
 Just download last release not installation required:
 
