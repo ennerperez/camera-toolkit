@@ -58,27 +58,19 @@
             // 
             // pictureBoxCamera
             // 
-            resources.ApplyResources(this.pictureBoxCamera, "pictureBoxCamera");
             this.pictureBoxCamera.ContextMenuStrip = this.contextMenuStripImage;
-            this.helpProviderMain.SetHelpKeyword(this.pictureBoxCamera, resources.GetString("pictureBoxCamera.HelpKeyword"));
-            this.helpProviderMain.SetHelpNavigator(this.pictureBoxCamera, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("pictureBoxCamera.HelpNavigator"))));
-            this.helpProviderMain.SetHelpString(this.pictureBoxCamera, resources.GetString("pictureBoxCamera.HelpString"));
+            resources.ApplyResources(this.pictureBoxCamera, "pictureBoxCamera");
             this.pictureBoxCamera.Name = "pictureBoxCamera";
             this.helpProviderMain.SetShowHelp(this.pictureBoxCamera, ((bool)(resources.GetObject("pictureBoxCamera.ShowHelp"))));
             this.pictureBoxCamera.TabStop = false;
-            this.toolTipMain.SetToolTip(this.pictureBoxCamera, resources.GetString("pictureBoxCamera.ToolTip"));
             // 
             // contextMenuStripImage
             // 
-            resources.ApplyResources(this.contextMenuStripImage, "contextMenuStripImage");
-            this.helpProviderMain.SetHelpKeyword(this.contextMenuStripImage, resources.GetString("contextMenuStripImage.HelpKeyword"));
-            this.helpProviderMain.SetHelpNavigator(this.contextMenuStripImage, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("contextMenuStripImage.HelpNavigator"))));
-            this.helpProviderMain.SetHelpString(this.contextMenuStripImage, resources.GetString("contextMenuStripImage.HelpString"));
             this.contextMenuStripImage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyToolStripMenuItem});
             this.contextMenuStripImage.Name = "contextMenuStripImage";
             this.helpProviderMain.SetShowHelp(this.contextMenuStripImage, ((bool)(resources.GetObject("contextMenuStripImage.ShowHelp"))));
-            this.toolTipMain.SetToolTip(this.contextMenuStripImage, resources.GetString("contextMenuStripImage.ToolTip"));
+            resources.ApplyResources(this.contextMenuStripImage, "contextMenuStripImage");
             this.contextMenuStripImage.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripImage_Opening);
             // 
             // copyToolStripMenuItem
@@ -94,9 +86,6 @@
             this.toolStripMenu.CanOverflow = false;
             this.toolStripMenu.GripMargin = new System.Windows.Forms.Padding(0);
             this.toolStripMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.helpProviderMain.SetHelpKeyword(this.toolStripMenu, resources.GetString("toolStripMenu.HelpKeyword"));
-            this.helpProviderMain.SetHelpNavigator(this.toolStripMenu, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("toolStripMenu.HelpNavigator"))));
-            this.helpProviderMain.SetHelpString(this.toolStripMenu, resources.GetString("toolStripMenu.HelpString"));
             this.toolStripMenu.ImageScalingSize = new System.Drawing.Size(48, 48);
             this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonDevices,
@@ -112,7 +101,6 @@
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.helpProviderMain.SetShowHelp(this.toolStripMenu, ((bool)(resources.GetObject("toolStripMenu.ShowHelp"))));
-            this.toolTipMain.SetToolTip(this.toolStripMenu, resources.GetString("toolStripMenu.ToolTip"));
             // 
             // toolStripButtonDevices
             // 
@@ -133,13 +121,13 @@
             // 
             // toolStripSeparator2
             // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // toolStripSeparatorMain1
             // 
-            resources.ApplyResources(this.toolStripSeparatorMain1, "toolStripSeparatorMain1");
             this.toolStripSeparatorMain1.Name = "toolStripSeparatorMain1";
+            resources.ApplyResources(this.toolStripSeparatorMain1, "toolStripSeparatorMain1");
             // 
             // toolStripButtonCapture
             // 
@@ -169,8 +157,8 @@
             // 
             // toolStripButtonClose
             // 
-            resources.ApplyResources(this.toolStripButtonClose, "toolStripButtonClose");
             this.toolStripButtonClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            resources.ApplyResources(this.toolStripButtonClose, "toolStripButtonClose");
             this.toolStripButtonClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonClose.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripButtonClose.Name = "toolStripButtonClose";
@@ -178,8 +166,8 @@
             // 
             // toolStripButtonAbout
             // 
-            resources.ApplyResources(this.toolStripButtonAbout, "toolStripButtonAbout");
             this.toolStripButtonAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            resources.ApplyResources(this.toolStripButtonAbout, "toolStripButtonAbout");
             this.toolStripButtonAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonAbout.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripButtonAbout.Name = "toolStripButtonAbout";
@@ -187,8 +175,8 @@
             // 
             // toolStripButtonSettings
             // 
-            resources.ApplyResources(this.toolStripButtonSettings, "toolStripButtonSettings");
             this.toolStripButtonSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            resources.ApplyResources(this.toolStripButtonSettings, "toolStripButtonSettings");
             this.toolStripButtonSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemCamera,
@@ -199,20 +187,20 @@
             // 
             // toolStripMenuItemCamera
             // 
-            resources.ApplyResources(this.toolStripMenuItemCamera, "toolStripMenuItemCamera");
             this.toolStripMenuItemCamera.Name = "toolStripMenuItemCamera";
+            resources.ApplyResources(this.toolStripMenuItemCamera, "toolStripMenuItemCamera");
             this.toolStripMenuItemCamera.Click += new System.EventHandler(this.toolStripMenuItemCamera_Click);
             // 
             // toolStripMenuItemSystem
             // 
-            resources.ApplyResources(this.toolStripMenuItemSystem, "toolStripMenuItemSystem");
             this.toolStripMenuItemSystem.Name = "toolStripMenuItemSystem";
+            resources.ApplyResources(this.toolStripMenuItemSystem, "toolStripMenuItemSystem");
             this.toolStripMenuItemSystem.Click += new System.EventHandler(this.toolStripMenuItemSystem_Click);
             // 
             // toolStripSeparator1
             // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // toolStripButtonGallery
             // 
@@ -228,22 +216,14 @@
             resources.ApplyResources(this.saveFileDialogImage, "saveFileDialogImage");
             this.saveFileDialogImage.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogImage_FileOk);
             // 
-            // helpProviderMain
-            // 
-            resources.ApplyResources(this.helpProviderMain, "helpProviderMain");
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBoxCamera);
             this.Controls.Add(this.toolStripMenu);
-            this.helpProviderMain.SetHelpKeyword(this, resources.GetString("$this.HelpKeyword"));
-            this.helpProviderMain.SetHelpNavigator(this, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("$this.HelpNavigator"))));
-            this.helpProviderMain.SetHelpString(this, resources.GetString("$this.HelpString"));
             this.Name = "FormMain";
             this.helpProviderMain.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
-            this.toolTipMain.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormViewer_FormClosing);
             this.Shown += new System.EventHandler(this.FormViewer_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamera)).EndInit();

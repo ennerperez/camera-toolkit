@@ -120,6 +120,10 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>&amp;Cerrar</value>
   </data>
+  <data name="labelAbout.Text" xml:space="preserve">
+    <value>{0} - Versión: {1}
+{2}</value>
+  </data>
   <data name="tabPageLog.Text" xml:space="preserve">
     <value>Cambios</value>
   </data>
@@ -744,9 +748,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Acerca de...</value>
-  </data>
-  <data name="labelAbout.Text" xml:space="preserve">
-    <value>{0} - Versión: {1}
-{2}</value>
   </data>
 </root>

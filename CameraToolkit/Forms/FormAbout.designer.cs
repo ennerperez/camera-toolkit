@@ -87,15 +87,15 @@
             // 
             // tabPageLog
             // 
-            resources.ApplyResources(this.tabPageLog, "tabPageLog");
             this.tabPageLog.Controls.Add(this.richTextBoxChangeLog);
+            resources.ApplyResources(this.tabPageLog, "tabPageLog");
             this.tabPageLog.Name = "tabPageLog";
             this.tabPageLog.UseVisualStyleBackColor = true;
             // 
             // tabPageLicense
             // 
-            resources.ApplyResources(this.tabPageLicense, "tabPageLicense");
             this.tabPageLicense.Controls.Add(this.richTextBoxLicense);
+            resources.ApplyResources(this.tabPageLicense, "tabPageLicense");
             this.tabPageLicense.Name = "tabPageLicense";
             this.tabPageLicense.UseVisualStyleBackColor = true;
             // 

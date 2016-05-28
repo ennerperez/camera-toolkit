@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Windows.Forms.Pictograms;
 using System.Drawing.Pictograms;
 using System.IO;
 
@@ -19,8 +20,7 @@ namespace Toolkit.Forms
         {
             InitializeComponent();
 
-            //var img = MaterialDesign.GetImage(MaterialDesign.IconType.linked_camera, 256, Color.White);
-            //img.Save(@"D:\Developments\GitHub\camera-toolkit\.editoricon.png");
+            Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
 
             // saveFileDialogImage
             saveFileDialogImage.DefaultExt = Program.imageFiles[0];
@@ -30,25 +30,25 @@ namespace Toolkit.Forms
 
 
             // Icons
-            toolStripButtonDevices.Image = MaterialDesign.GetImage(MaterialDesign.IconType.linked_camera, 48, Color.White);
+            toolStripButtonDevices.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.linked_camera, 48, Color.White);
+            
+            toolStripButtonCapture.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.camera, 48, Color.White);
+            toolStripButtonSave.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.save, 48, Color.White);
+            toolStripButtonSettings.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings, 48, Color.White);
 
-            toolStripButtonCapture.Image = MaterialDesign.GetImage(MaterialDesign.IconType.camera, 48, Color.White);
-            toolStripButtonSave.Image = MaterialDesign.GetImage(MaterialDesign.IconType.save, 48, Color.White);
-            toolStripButtonSettings.Image = MaterialDesign.GetImage(MaterialDesign.IconType.settings, 48, Color.White);
+            toolStripMenuItemCamera.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings_brightness, 48, toolStripMenu.BackColor);
+            toolStripMenuItemSystem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings_system_daydream, 48, toolStripMenu.BackColor);
 
-            toolStripMenuItemCamera.Image = MaterialDesign.GetImage(MaterialDesign.IconType.settings_brightness, 48, toolStripMenu.BackColor);
-            toolStripMenuItemSystem.Image = MaterialDesign.GetImage(MaterialDesign.IconType.settings_system_daydream, 48, toolStripMenu.BackColor);
+            toolStripButtonGallery.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.image, 48, Color.White);
 
-            toolStripButtonGallery.Image = MaterialDesign.GetImage(MaterialDesign.IconType.image, 48, Color.White);
+            toolStripButtonFolder.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.folder_open, 48, Color.White);
 
-            toolStripButtonFolder.Image = MaterialDesign.GetImage(MaterialDesign.IconType.folder_open, 48, Color.White);
+            toolStripButtonAbout.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.info, 48, Color.White);
+            toolStripButtonClose.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.close, 48, Color.White);
 
-            toolStripButtonAbout.Image = MaterialDesign.GetImage(MaterialDesign.IconType.info, 48, Color.White);
-            toolStripButtonClose.Image = MaterialDesign.GetImage(MaterialDesign.IconType.close, 48, Color.White);
+            disconnectToolStripMenuItem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.videocam_off, 48, toolStripMenu.BackColor);
 
-            disconnectToolStripMenuItem.Image = MaterialDesign.GetImage(MaterialDesign.IconType.videocam_off, 48, toolStripMenu.BackColor);
-
-            copyToolStripMenuItem.Image = MaterialDesign.GetImage(MaterialDesign.IconType.content_copy, 16, toolStripMenu.BackColor);
+            copyToolStripMenuItem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.content_copy, 16, toolStripMenu.BackColor);
 
         }
 
@@ -96,7 +96,7 @@ namespace Toolkit.Forms
         public string Moniker { get; set; }
         public VideoCaptureDevice VideSource { get; set; }
 
-        #region Clipboard
+#region Clipboard
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -109,7 +109,7 @@ namespace Toolkit.Forms
             copyToolStripMenuItem.Enabled = pictureBoxCamera.Image != null;
         }
 
-        #endregion
+#endregion
 
         private void FormViewer_Shown(object sender, EventArgs e)
         {
@@ -119,7 +119,7 @@ namespace Toolkit.Forms
                 var _item = new ToolStripMenuItem(item.Value);
                 _item.Tag = item.Key;
                 _item.Click += _item_Click;
-                _item.Image = MaterialDesign.GetImage(MaterialDesign.IconType.videocam, 48, toolStripMenu.BackColor);
+                _item.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.videocam, 48, toolStripMenu.BackColor);
                 toolStripButtonDevices.DropDownItems.Add(_item);
 
                 if (Properties.Settings.Default.AutoStart && item.Key == Properties.Settings.Default.DefaultDevice)

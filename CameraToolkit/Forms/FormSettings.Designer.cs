@@ -75,10 +75,6 @@
             this.buttonExamine.UseVisualStyleBackColor = true;
             this.buttonExamine.Click += new System.EventHandler(this.buttonExamine_Click);
             // 
-            // folderBrowserDialogAutoSavePath
-            // 
-            resources.ApplyResources(this.folderBrowserDialogAutoSavePath, "folderBrowserDialogAutoSavePath");
-            // 
             // labelAutoSavePath
             // 
             resources.ApplyResources(this.labelAutoSavePath, "labelAutoSavePath");
