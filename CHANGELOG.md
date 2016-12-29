@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.6] - [UNRELEASE]
+### Changed
+- Enhancements
+
+## [1.0.5] - [2016-08-28]
+### Changed
+- Minors bugs fixes
+
 ## [1.0.4] - [2016-05-27]
 ### Changed
 - AppIcon Update

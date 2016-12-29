@@ -30,12 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.pictureBoxCamera = new System.Windows.Forms.PictureBox();
             this.contextMenuStripImage = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonDevices = new System.Windows.Forms.ToolStripDropDownButton();
-            this.disconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuDisconnectItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparatorMain1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonCapture = new System.Windows.Forms.ToolStripButton();
@@ -48,36 +47,30 @@
             this.toolStripMenuItemSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonGallery = new System.Windows.Forms.ToolStripButton();
-            this.saveFileDialogImage = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialogMain = new System.Windows.Forms.SaveFileDialog();
             this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
             this.helpProviderMain = new System.Windows.Forms.HelpProvider();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamera)).BeginInit();
+            this.panelCamera = new System.Windows.Forms.BufferedPanel();
+            this.labelPreview = new System.Windows.Forms.Label();
             this.contextMenuStripImage.SuspendLayout();
             this.toolStripMenu.SuspendLayout();
+            this.panelCamera.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBoxCamera
-            // 
-            this.pictureBoxCamera.ContextMenuStrip = this.contextMenuStripImage;
-            resources.ApplyResources(this.pictureBoxCamera, "pictureBoxCamera");
-            this.pictureBoxCamera.Name = "pictureBoxCamera";
-            this.helpProviderMain.SetShowHelp(this.pictureBoxCamera, ((bool)(resources.GetObject("pictureBoxCamera.ShowHelp"))));
-            this.pictureBoxCamera.TabStop = false;
             // 
             // contextMenuStripImage
             // 
             this.contextMenuStripImage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.copyToolStripMenuItem});
+            this.toolStripMenuItemCopy});
             this.contextMenuStripImage.Name = "contextMenuStripImage";
             this.helpProviderMain.SetShowHelp(this.contextMenuStripImage, ((bool)(resources.GetObject("contextMenuStripImage.ShowHelp"))));
             resources.ApplyResources(this.contextMenuStripImage, "contextMenuStripImage");
             this.contextMenuStripImage.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripImage_Opening);
             // 
-            // copyToolStripMenuItem
+            // toolStripMenuItemCopy
             // 
-            resources.ApplyResources(this.copyToolStripMenuItem, "copyToolStripMenuItem");
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            this.toolStripMenuItemCopy.Name = "toolStripMenuItemCopy";
+            resources.ApplyResources(this.toolStripMenuItemCopy, "toolStripMenuItemCopy");
+            this.toolStripMenuItemCopy.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // toolStripMenu
             // 
@@ -107,17 +100,17 @@
             resources.ApplyResources(this.toolStripButtonDevices, "toolStripButtonDevices");
             this.toolStripButtonDevices.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonDevices.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.disconnectToolStripMenuItem,
+            this.toolStripMenuDisconnectItem,
             this.toolStripSeparator2});
             this.toolStripButtonDevices.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripButtonDevices.Name = "toolStripButtonDevices";
             this.toolStripButtonDevices.ShowDropDownArrow = false;
             // 
-            // disconnectToolStripMenuItem
+            // toolStripMenuDisconnectItem
             // 
-            resources.ApplyResources(this.disconnectToolStripMenuItem, "disconnectToolStripMenuItem");
-            this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
-            this.disconnectToolStripMenuItem.Click += new System.EventHandler(this.disconnectToolStripMenuItem_Click);
+            resources.ApplyResources(this.toolStripMenuDisconnectItem, "toolStripMenuDisconnectItem");
+            this.toolStripMenuDisconnectItem.Name = "toolStripMenuDisconnectItem";
+            this.toolStripMenuDisconnectItem.Click += new System.EventHandler(this.toolStripMenuItemDisconnect_Click);
             // 
             // toolStripSeparator2
             // 
@@ -210,46 +203,64 @@
             this.toolStripButtonGallery.Name = "toolStripButtonGallery";
             this.toolStripButtonGallery.Click += new System.EventHandler(this.toolStripButtonGallery_Click);
             // 
-            // saveFileDialogImage
+            // saveFileDialogMain
             // 
-            this.saveFileDialogImage.DefaultExt = "jpg";
-            resources.ApplyResources(this.saveFileDialogImage, "saveFileDialogImage");
-            this.saveFileDialogImage.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogImage_FileOk);
+            this.saveFileDialogMain.DefaultExt = "jpg";
+            resources.ApplyResources(this.saveFileDialogMain, "saveFileDialogMain");
+            this.saveFileDialogMain.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogMain_FileOk);
+            // 
+            // panelCamera
+            // 
+            this.panelCamera.ContextMenuStrip = this.contextMenuStripImage;
+            this.panelCamera.Controls.Add(this.labelPreview);
+            resources.ApplyResources(this.panelCamera, "panelCamera");
+            this.panelCamera.Name = "panelCamera";
+            this.helpProviderMain.SetShowHelp(this.panelCamera, ((bool)(resources.GetObject("panelCamera.ShowHelp"))));
+            // 
+            // labelPreview
+            // 
+            this.labelPreview.AllowDrop = true;
+            this.labelPreview.BackColor = System.Drawing.Color.Transparent;
+            this.labelPreview.ContextMenuStrip = this.contextMenuStripImage;
+            resources.ApplyResources(this.labelPreview, "labelPreview");
+            this.labelPreview.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelPreview.Name = "labelPreview";
+            this.helpProviderMain.SetShowHelp(this.labelPreview, ((bool)(resources.GetObject("labelPreview.ShowHelp"))));
             // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBoxCamera);
+            this.Controls.Add(this.panelCamera);
             this.Controls.Add(this.toolStripMenu);
             this.Name = "FormMain";
             this.helpProviderMain.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormViewer_FormClosing);
             this.Shown += new System.EventHandler(this.FormViewer_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamera)).EndInit();
             this.contextMenuStripImage.ResumeLayout(false);
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
+            this.panelCamera.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBoxCamera;
+        private System.Windows.Forms.BufferedPanel panelCamera;
         private System.Windows.Forms.ToolStrip toolStripMenu;
         private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.ToolStripButton toolStripButtonCapture;
         private System.Windows.Forms.ToolStripButton toolStripButtonClose;
-        private System.Windows.Forms.SaveFileDialog saveFileDialogImage;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogMain;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparatorMain1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripButtonDevices;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem disconnectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuDisconnectItem;
         private System.Windows.Forms.ToolStripButton toolStripButtonAbout;
         private System.Windows.Forms.ToolTip toolTipMain;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripImage;
-        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCopy;
         private System.Windows.Forms.ToolStripButton toolStripButtonFolder;
         private System.Windows.Forms.HelpProvider helpProviderMain;
         private System.Windows.Forms.ToolStripDropDownButton toolStripButtonSettings;
@@ -257,5 +268,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSystem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButtonGallery;
+        private System.Windows.Forms.Label labelPreview;
     }
 }

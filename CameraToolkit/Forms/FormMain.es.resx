@@ -494,11 +494,21 @@
   <data name="toolStripButtonGallery.Text" xml:space="preserve">
     <value>&amp;Galeria</value>
   </data>
-  <data name="saveFileDialogImage.Filter" xml:space="preserve">
-    <value>Imágenes (*{0}) | *{1} </value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.Icon" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
+  </data>
+  <data name="toolStripMenuItemCopy.Text" xml:space="preserve">
+    <value>&amp;Copiar</value>
+  </data>
+  <data name="toolStripMenuDisconnectItem.Text" xml:space="preserve">
+    <value>&amp;Desconectar</value>
+  </data>
+  <data name="saveFileDialogMain.Filter" xml:space="preserve">
+    <value>Imagenes|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif|Todos los archivos|*.*</value>
+  </data>
+  <data name="labelPreview.Text" xml:space="preserve">
+    <value>Seleccione un dispositivo
+Para comenzar la captura</value>
   </data>
 </root>
