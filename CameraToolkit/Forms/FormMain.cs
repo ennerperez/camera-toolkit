@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.Pictograms;
+using Tesseract;
 
 namespace Toolkit.Forms
 {
@@ -32,6 +33,7 @@ namespace Toolkit.Forms
             toolStripMenuItemCamera.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings_brightness, 48, toolStripMenu.BackColor);
             toolStripMenuItemSystem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings_system_daydream, 48, toolStripMenu.BackColor);
 
+            toolStripButtonOCR.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.text_fields, 48, Color.White);
             toolStripButtonGallery.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.image, 48, Color.White);
             toolStripButtonFolder.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.folder_open, 48, Color.White);
 
@@ -180,6 +182,7 @@ namespace Toolkit.Forms
             if (IsRunning())
                 paused = !paused;
             toolStripButtonCapture.Checked = paused;
+            toolStripButtonOCR.Enabled = paused;
         }
         private void toolStripMenuItemDisconnect_Click(object sender, EventArgs e)
         {
@@ -203,6 +206,7 @@ namespace Toolkit.Forms
             toolStripButtonCapture.Checked = paused;
             toolStripButtonCapture.Enabled = IsRunning();
             toolStripButtonSave.Enabled = IsRunning();
+            toolStripButtonOCR.Enabled = IsRunning();
 
             toolStripMenuDisconnectItem.Enabled = IsRunning();
 
@@ -286,6 +290,52 @@ namespace Toolkit.Forms
 
         #endregion
 
+        private void toolStripButtonOCR_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                var @return = string.Empty;
+                var dir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), ApplicationInfo.ProductName);
+                if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+                var file = Path.Combine(dir, this.panelCamera.GetHashCode().ToString());
+                this.panelCamera.BackgroundImage.Save(file);
+
+                using (var engine = new TesseractEngine(@"./tessdata", "spa", EngineMode.Default)) //TODO: Language selection/detection
+                using (var img = Pix.LoadFromFile(file))
+                using (var page = engine.Process(img))
+                    @return = page.GetText();
+
+                File.Delete(file);
+                if (!string.IsNullOrEmpty(@return))
+                {
+                    var child = new Form()
+                    {
+                        Icon = this.Icon,
+                        Size = new Size(640, 480),
+                        StartPosition = FormStartPosition.CenterScreen,
+                        Text = "OCR"
+                    };
+
+                    child.Controls.Add(new RichTextBox()
+                    {
+                        Multiline = true,
+                        Text = @return,
+                        Dock = DockStyle.Fill,
+                        ReadOnly = true,
+                    });
+                    child.Show();
+                }
+                else
+                    throw new Tesseract.TesseractException("Invalid image source"); //TODO: Translate
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
 

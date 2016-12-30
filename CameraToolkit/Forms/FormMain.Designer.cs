@@ -47,6 +47,7 @@
             this.toolStripMenuItemSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonGallery = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonOCR = new System.Windows.Forms.ToolStripButton();
             this.saveFileDialogMain = new System.Windows.Forms.SaveFileDialog();
             this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
             this.helpProviderMain = new System.Windows.Forms.HelpProvider();
@@ -90,7 +91,8 @@
             this.toolStripButtonAbout,
             this.toolStripButtonSettings,
             this.toolStripSeparator1,
-            this.toolStripButtonGallery});
+            this.toolStripButtonGallery,
+            this.toolStripButtonOCR});
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.helpProviderMain.SetShowHelp(this.toolStripMenu, ((bool)(resources.GetObject("toolStripMenu.ShowHelp"))));
@@ -203,6 +205,14 @@
             this.toolStripButtonGallery.Name = "toolStripButtonGallery";
             this.toolStripButtonGallery.Click += new System.EventHandler(this.toolStripButtonGallery_Click);
             // 
+            // toolStripButtonOCR
+            // 
+            resources.ApplyResources(this.toolStripButtonOCR, "toolStripButtonOCR");
+            this.toolStripButtonOCR.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonOCR.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonOCR.Name = "toolStripButtonOCR";
+            this.toolStripButtonOCR.Click += new System.EventHandler(this.toolStripButtonOCR_Click);
+            // 
             // saveFileDialogMain
             // 
             this.saveFileDialogMain.DefaultExt = "jpg";
@@ -269,5 +279,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButtonGallery;
         private System.Windows.Forms.Label labelPreview;
+        private System.Windows.Forms.ToolStripButton toolStripButtonOCR;
     }
 }

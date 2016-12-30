@@ -415,6 +415,33 @@
   <data name="toolStripButtonGallery.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="toolStripButtonOCR.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripButtonOCR.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripButtonOCR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACwSURBVGhD7dfRCcMgFIVh13CBLpCxulsH6iqi7dWehDxI
+        QBRD5f/gPiRXk3sggcQBALC8GONrVKWUHrrsPJ+xNl12Ht14FAI0qz3Le4UQ3hrsUFu31y3vwBUb6Km5
+        izykWv9h6QDW87nfWto+R76hZi/OAexw+51to+1zEKBC2+dYOkCNlh3yfrXuQQACdCIAAToRgACdbABv
+        c+RPhlJ2fPnHdV6r9V4tAAAAAGjg3BcTc64TFU3N/wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripButtonOCR.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="toolStripButtonOCR.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonOCR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 48</value>
+  </data>
+  <data name="toolStripButtonOCR.Text" xml:space="preserve">
+    <value>&amp;OCR</value>
+  </data>
   <data name="toolStripMenu.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -636,6 +663,12 @@ To start capturing</value>
     <value>toolStripButtonGallery</value>
   </data>
   <data name="&gt;&gt;toolStripButtonGallery.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonOCR.Name" xml:space="preserve">
+    <value>toolStripButtonOCR</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonOCR.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;saveFileDialogMain.Name" xml:space="preserve">
