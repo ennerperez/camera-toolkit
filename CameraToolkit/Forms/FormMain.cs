@@ -1,17 +1,15 @@
 ﻿using AForge.Video;
 using AForge.Video.DirectShow;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Windows.Forms.Pictograms;
 using System.Drawing.Pictograms;
 using System.IO;
-using System.Diagnostics;
+using System.Linq;
+using System.Windows.Forms;
+using System.Windows.Forms.Pictograms;
 
 namespace Toolkit.Forms
 {
@@ -28,18 +26,16 @@ namespace Toolkit.Forms
 
             // Icons
             toolStripButtonDevices.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.linked_camera, 48, Color.White);
-            
             toolStripButtonCapture.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.camera, 48, Color.White);
             toolStripButtonSave.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.save, 48, Color.White);
-            toolStripButtonSettings.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings, 48, Color.White);
 
             toolStripMenuItemCamera.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings_brightness, 48, toolStripMenu.BackColor);
             toolStripMenuItemSystem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings_system_daydream, 48, toolStripMenu.BackColor);
 
             toolStripButtonGallery.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.image, 48, Color.White);
-
             toolStripButtonFolder.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.folder_open, 48, Color.White);
 
+            toolStripButtonSettings.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings, 48, Color.White);
             toolStripButtonAbout.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.info, 48, Color.White);
             toolStripButtonClose.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.close, 48, Color.White);
 
@@ -53,7 +49,7 @@ namespace Toolkit.Forms
 
         }
 
-        
+
         private bool IsRunning()
         {
             return VideSource != null && VideSource.IsRunning;
@@ -63,7 +59,7 @@ namespace Toolkit.Forms
         {
 
             toolStripMenuDisconnectItem.PerformClick();
-            
+
             Moniker = (sender as ToolStripMenuItem).Tag.ToString();
             DeviceName = (sender as ToolStripMenuItem).Text;
 
@@ -96,6 +92,9 @@ namespace Toolkit.Forms
 
             labelPreview.Visible = !IsRunning();
 
+            toolStripButtonCapture.Enabled = IsRunning();
+            toolStripButtonSave.Enabled = IsRunning();
+
 
         }
 
@@ -103,7 +102,7 @@ namespace Toolkit.Forms
         public string Moniker { get; set; }
         public VideoCaptureDevice VideSource { get; set; }
 
-#region Clipboard
+        #region Clipboard
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -202,6 +201,8 @@ namespace Toolkit.Forms
 
             paused = false;
             toolStripButtonCapture.Checked = paused;
+            toolStripButtonCapture.Enabled = IsRunning();
+            toolStripButtonSave.Enabled = IsRunning();
 
             toolStripMenuDisconnectItem.Enabled = IsRunning();
 

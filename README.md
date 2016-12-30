@@ -16,6 +16,7 @@ See the [changelog](CHANGELOG.md) for changes.
 - [x] Album name
 - [x] Spanish translation
 - [ ] Gallery management
+- [ ] OCR module
 
 ## Table of contents
 
