@@ -120,6 +120,13 @@
   <metadata name="contextMenuStripImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>421, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripMenuItemCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 22</value>
+  </data>
+  <data name="toolStripMenuItemCopy.Text" xml:space="preserve">
+    <value>&amp;Copy</value>
+  </data>
   <metadata name="helpProviderMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>604, 17</value>
   </metadata>
@@ -127,7 +134,6 @@
   <data name="contextMenuStripImage.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="contextMenuStripImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 26</value>
   </data>
@@ -136,12 +142,6 @@
   </data>
   <data name="&gt;&gt;contextMenuStripImage.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripMenuItemCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 22</value>
-  </data>
-  <data name="toolStripMenuItemCopy.Text" xml:space="preserve">
-    <value>&amp;Copy</value>
   </data>
   <metadata name="toolStripMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>174, 17</value>
@@ -153,35 +153,23 @@
   <data name="toolStripMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
-  <data name="toolStripMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="toolStripMenu.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="toolStripMenu.ShowHelp" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 441</value>
-  </data>
-  <data name="toolStripMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenu.Name" xml:space="preserve">
-    <value>toolStripMenu</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="toolStripButtonDevices.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="toolStripMenuDisconnectItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripMenuDisconnectItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="toolStripMenuDisconnectItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="toolStripMenuDisconnectItem.Text" xml:space="preserve">
+    <value>&amp;Disconnect</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 6</value>
   </data>
   <data name="toolStripButtonDevices.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -210,25 +198,13 @@
   <data name="toolStripButtonDevices.Text" xml:space="preserve">
     <value>&amp;Device</value>
   </data>
-  <data name="toolStripMenuDisconnectItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripMenuDisconnectItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="toolStripMenuDisconnectItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
-  </data>
-  <data name="toolStripMenuDisconnectItem.Text" xml:space="preserve">
-    <value>&amp;Disconnect</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 6</value>
-  </data>
   <data name="toolStripSeparatorMain1.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 6</value>
   </data>
   <data name="toolStripButtonCapture.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripButtonCapture.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="toolStripButtonCapture.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -260,6 +236,9 @@
     <value>&amp;Capture</value>
   </data>
   <data name="toolStripButtonSave.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripButtonSave.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="toolStripButtonSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -364,6 +343,18 @@
   <data name="toolStripButtonSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="toolStripMenuItemCamera.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItemCamera.Text" xml:space="preserve">
+    <value>&amp;Camera...</value>
+  </data>
+  <data name="toolStripMenuItemSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItemSystem.Text" xml:space="preserve">
+    <value>&amp;System...</value>
+  </data>
   <data name="toolStripButtonSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -388,18 +379,6 @@
   </data>
   <data name="toolStripButtonSettings.Text" xml:space="preserve">
     <value>Se&amp;ttings</value>
-  </data>
-  <data name="toolStripMenuItemCamera.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 22</value>
-  </data>
-  <data name="toolStripMenuItemCamera.Text" xml:space="preserve">
-    <value>&amp;Camera...</value>
-  </data>
-  <data name="toolStripMenuItemSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 22</value>
-  </data>
-  <data name="toolStripMenuItemSystem.Text" xml:space="preserve">
-    <value>&amp;System...</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 6</value>
@@ -436,6 +415,33 @@
   <data name="toolStripButtonGallery.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="toolStripMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="toolStripMenu.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="toolStripMenu.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="toolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 441</value>
+  </data>
+  <data name="toolStripMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenu.Name" xml:space="preserve">
+    <value>toolStripMenu</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenu.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="saveFileDialogMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -444,9 +450,6 @@
   </data>
   <metadata name="toolTipMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>304, 17</value>
-  </metadata>
-  <metadata name="helpProviderMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>604, 17</value>
   </metadata>
   <data name="labelPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -507,7 +510,7 @@ To start capturing</value>
     <value>panelCamera</value>
   </data>
   <data name="&gt;&gt;panelCamera.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BufferedPanel, CameraToolkit, Version=1.0.6207.855, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.BufferedPanel, CameraToolkit, Version=1.0.6208.1671, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelCamera.Parent" xml:space="preserve">
     <value>$this</value>
@@ -526,6 +529,9 @@ To start capturing</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -655,11 +661,5 @@ To start capturing</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="copyToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Copy</value>
-  </data>
-  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Disconnect</value>
   </data>
 </root>

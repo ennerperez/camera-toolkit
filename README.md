@@ -1,4 +1,4 @@
-![logo](https://raw.githubusercontent.com/ennerperez/camera-toolkit/master/.editoricon.png)
+![logo](.editoricon.png)
 
 # Camera Toolkit for Devigners
 
@@ -16,6 +16,7 @@ See the [changelog](CHANGELOG.md) for changes.
 - [x] Album name
 - [x] Spanish translation
 - [ ] Gallery management
+- [ ] OCR module
 
 ## Table of contents
 
