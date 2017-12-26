@@ -7,9 +7,8 @@ using System.Windows.Forms;
 
 namespace Toolkit
 {
-    static class Program
+    internal static class Program
     {
-
         internal static FilterInfoCollection devices;
         internal static List<string> activeDevices;
         internal static string sessionId;
@@ -19,9 +18,8 @@ namespace Toolkit
         internal static List<string> imageFiles = new List<string>(new string[] { ".bmp", ".jpg", ".jpeg", ".jpe", ".jfif", ".png", ".gif" });
 
         [STAThread]
-        static void Main()
+        private static void Main()
         {
-
 #if DEBUG
             ImageHelper.GetEditorIcon(MaterialDesign.GetImage(MaterialDesign.IconType.linked_camera, 256, Color.White));
 #endif
@@ -35,7 +33,7 @@ namespace Toolkit
             Application.Run(new Forms.FormMain());
         }
 
-        internal static Dictionary<string, string> getDevices()
+        internal static Dictionary<string, string> GetDevices()
         {
             var result = new Dictionary<string, string>();
 
@@ -50,38 +48,46 @@ namespace Toolkit
         {
             var size = new Size(200, 70);
 
-            var inputBox = new Form();
-            inputBox.Padding = new Padding(6);
-            inputBox.FormBorderStyle = FormBorderStyle.FixedDialog;
-            inputBox.ShowIcon = false;
-            inputBox.ShowInTaskbar = false;
-            inputBox.MaximizeBox = false;
-            inputBox.MinimizeBox = false;
-            inputBox.ClientSize = size;
-            inputBox.Text = caption;
-            inputBox.StartPosition = FormStartPosition.CenterParent;
+            var inputBox = new Form
+            {
+                Padding = new Padding(6),
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                ShowIcon = false,
+                ShowInTaskbar = false,
+                MaximizeBox = false,
+                MinimizeBox = false,
+                ClientSize = size,
+                Text = caption,
+                StartPosition = FormStartPosition.CenterParent
+            };
 
-            var textBox = new TextBox();
-            textBox.Dock = DockStyle.Top;
-            textBox.Size = new Size(size.Width - 10, 23);
-            textBox.Location = new Point(5, 5);
-            textBox.Text = input;
+            var textBox = new TextBox
+            {
+                Dock = DockStyle.Top,
+                Size = new Size(size.Width - 10, 23),
+                Location = new Point(5, 5),
+                Text = input
+            };
             inputBox.Controls.Add(textBox);
 
-            var okButton = new Button();
-            okButton.DialogResult = DialogResult.OK;
-            okButton.Name = "okButton";
-            okButton.Size = new Size(75, 23);
-            okButton.Text = Messages.OK;
-            okButton.Location = new Point(size.Width - 80 - 80, 39);
+            var okButton = new Button
+            {
+                DialogResult = DialogResult.OK,
+                Name = "okButton",
+                Size = new Size(75, 23),
+                Text = Messages.OK,
+                Location = new Point(size.Width - 80 - 80, 39)
+            };
             inputBox.Controls.Add(okButton);
 
-            var cancelButton = new Button();
-            cancelButton.DialogResult = DialogResult.Cancel;
-            cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(75, 23);
-            cancelButton.Text = Messages.Cancel;
-            cancelButton.Location = new Point(size.Width - 80, 39);
+            var cancelButton = new Button
+            {
+                DialogResult = DialogResult.Cancel,
+                Name = "cancelButton",
+                Size = new Size(75, 23),
+                Text = Messages.Cancel,
+                Location = new Point(size.Width - 80, 39)
+            };
             inputBox.Controls.Add(cancelButton);
 
             inputBox.AcceptButton = okButton;
@@ -92,7 +98,5 @@ namespace Toolkit
 
             return result;
         }
-
     }
-
 }

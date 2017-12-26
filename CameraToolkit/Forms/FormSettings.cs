@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Toolkit.Forms
@@ -16,16 +11,15 @@ namespace Toolkit.Forms
             InitializeComponent();
 
             Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
-            
+
             comboBoxDevices.DisplayMember = "Value";
             comboBoxDevices.ValueMember = "Key";
-            comboBoxDevices.DataSource = new BindingSource(Program.getDevices(), null);
+            comboBoxDevices.DataSource = new BindingSource(Program.GetDevices(), null);
 
             comboBoxDevices.DataBindings.Add("Enabled", checkBoxAutoStart, "Checked");
             textBoxAutoSavePath.DataBindings.Add("Enabled", checkBoxAutoSave, "Checked");
             buttonExamine.DataBindings.Add("Enabled", checkBoxAutoSave, "Checked");
             checkBoxAlbumName.DataBindings.Add("Enabled", checkBoxAutoSave, "Checked");
-
         }
 
         private void buttonExamine_Click(object sender, EventArgs e)
@@ -37,7 +31,6 @@ namespace Toolkit.Forms
 
         private void buttonAccept_Click(object sender, EventArgs e)
         {
-
             if (checkBoxAutoSave.Checked && !System.IO.Directory.Exists(textBoxAutoSavePath.Text))
             {
                 var question = MessageBox.Show(Toolkit.Messages.PathNotFoundAndCreate, Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -75,6 +68,5 @@ namespace Toolkit.Forms
             if (!string.IsNullOrEmpty(Properties.Settings.Default.DefaultDevice) && comboBoxDevices.Items.Count > 0)
                 comboBoxDevices.SelectedValue = Properties.Settings.Default.DefaultDevice;
         }
-        
     }
 }
