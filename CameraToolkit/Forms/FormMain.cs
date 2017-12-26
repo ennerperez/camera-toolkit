@@ -20,29 +20,30 @@ namespace Toolkit.Forms
         {
             InitializeComponent();
 
-            Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
+            Icon = Icon.ExtractAssociatedIcon(Program.Assembly.Location);
 
             // saveFileDialogMain
-            saveFileDialogMain.DefaultExt = Program.imageFiles[0];
+            saveFileDialogMain.DefaultExt = Program.Formats.FirstOrDefault();
 
             // Icons
-            toolStripButtonDevices.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.linked_camera, 48, Color.White);
-            toolStripButtonCapture.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.camera, 48, Color.White);
-            toolStripButtonSave.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.save, 48, Color.White);
+            toolStripButtonDevices.SetImage(MaterialDesign.Instance, Program.Icon, 48, SystemColors.Control);
+            toolStripButtonCapture.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.camera, 48, SystemColors.Control);
+            toolStripButtonSave.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.save, 48, SystemColors.Control);
 
-            toolStripMenuItemCamera.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings_brightness, 48, toolStripMenu.BackColor);
-            toolStripMenuItemSystem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings_system_daydream, 48, toolStripMenu.BackColor);
+            //toolStripMenuItemCamera.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings_brightness, 48, toolStripMenu.BackColor);
+            //toolStripMenuItemSystem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings_system_daydream, 48, toolStripMenu.BackColor);
 
-            toolStripButtonGallery.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.image, 48, Color.White);
-            toolStripButtonFolder.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.folder_open, 48, Color.White);
+            toolStripMenuItemCamera.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.build, 48, toolStripMenu.BackColor);
+            toolStripMenuItemSystem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings, 48, toolStripMenu.BackColor);
 
-            toolStripButtonSettings.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings, 48, Color.White);
-            toolStripButtonAbout.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.info, 48, Color.White);
-            toolStripButtonClose.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.close, 48, Color.White);
+            toolStripButtonGallery.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.image, 48, SystemColors.Control);
+            toolStripButtonFolder.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.folder_open, 48, SystemColors.Control);
+
+            toolStripButtonSettings.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings, 48, SystemColors.Control);
+            toolStripButtonAbout.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.info, 48, SystemColors.Control);
+            toolStripButtonClose.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.close, 48, SystemColors.Control);
 
             toolStripMenuDisconnectItem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.videocam_off, 48, toolStripMenu.BackColor);
-
-            toolStripMenuItemCopy.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.content_copy, 16, toolStripMenu.BackColor);
 
 #if DEBUG
             FormHelper.ExtractResources(toolStripMenu);
@@ -78,7 +79,7 @@ namespace Toolkit.Forms
                 toolStripMenuDisconnectItem.Enabled = IsRunning();
 
                 if (Properties.Settings.Default.AskAlbumName)
-                    Program.ShowInputDialog(ref Program.albumName, "Album");
+                    Program.ShowInputDialog(ref Program.AlbumName, "Album");
             }
             catch (Exception ex)
             {
@@ -140,10 +141,13 @@ namespace Toolkit.Forms
                     defaultDevice = _item;
             }
 
+            labelPreview.Visible = defaultDevice == null;
+
             if (defaultDevice != null)
                 defaultDevice.PerformClick();
 
-            await GitHubInfo.CheckForUpdateAsync();
+            if (Properties.Settings.Default.CheckForUpdates)
+                await GitHubInfo.CheckForUpdateAsync();
         }
 
         private void FormViewer_FormClosing(object sender, FormClosingEventArgs e)
@@ -205,7 +209,7 @@ namespace Toolkit.Forms
 
             toolStripMenuDisconnectItem.Enabled = IsRunning();
 
-            Program.albumName = string.Empty;
+            Program.AlbumName = string.Empty;
         }
 
         private void ToolStripButtonSave_Click(object sender, EventArgs e)
@@ -217,13 +221,16 @@ namespace Toolkit.Forms
 
                 while (filename == string.Empty || File.Exists(filename))
                 {
-                    filename = string.Format("{0}_{1}_{2}_{3}.jpg", DeviceName.Replace(' ', '_'), Program.sessionId, DateTime.Now.ToString("yyyyMMdd"), i.ToString());
+                    filename = string.Format("{0}_{1}_{2}_{3}.jpg", DeviceName.Replace(' ', '_'), Program.SessionId, DateTime.Now.ToString("yyyyMMdd"), i.ToString());
                     if (Properties.Settings.Default.AutoSave &&
                         !string.IsNullOrEmpty(Properties.Settings.Default.DefaultPath) &&
                         Directory.Exists(Properties.Settings.Default.DefaultPath))
+                    {
+                        if (Properties.Settings.Default.AskAlbumName && string.IsNullOrEmpty(Program.AlbumName))
+                            Program.ShowInputDialog(ref Program.AlbumName, "Album");
 
-                        filename = Path.Combine(Properties.Settings.Default.DefaultPath, Program.albumName, filename);
-
+                        filename = Path.Combine(Properties.Settings.Default.DefaultPath, Program.AlbumName, filename);
+                    }
                     i++;
                 }
 
@@ -248,14 +255,31 @@ namespace Toolkit.Forms
                 Properties.Settings.Default.DefaultPath = string.Empty;
                 Properties.Settings.Default.Save();
 
-                MessageBox.Show(Toolkit.Messages.PathNotFound, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Messages.PathNotFound, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-                System.Diagnostics.Process.Start(Properties.Settings.Default.DefaultPath);
+                Process.Start(Path.Combine(Properties.Settings.Default.DefaultPath, Program.AlbumName));
         }
 
         private void ToolStripButtonGallery_Click(object sender, EventArgs e)
         {
+            if (!this.Controls.OfType<Controls.Gallery>().Any())
+            {
+                var child = new Controls.Gallery
+                {
+                    Dock = DockStyle.Right,
+                    BackColor = toolStripMenu.BackColor,
+                    ForeColor = SystemColors.Control
+                };
+                Controls.Add(child);
+                child.BringToFront();
+            }
+            else
+            {
+                var child = this.Controls.OfType<Controls.Gallery>().FirstOrDefault();
+                if (child != null)
+                    child.Close();
+            }
         }
 
         private void ToolStripMenuItemCamera_Click(object sender, EventArgs e)
@@ -268,6 +292,9 @@ namespace Toolkit.Forms
         {
             var child = new FormSettings();
             child.ShowDialog();
+            toolStripButtonGallery.Visible = Properties.Settings.Default.AutoSave;
+            toolStripButtonFolder.Visible = Properties.Settings.Default.AutoSave;
+            toolStripSeparator1.Visible = Properties.Settings.Default.AutoSave;
         }
 
         private void ToolStripButtonAbout_Click(object sender, EventArgs e)

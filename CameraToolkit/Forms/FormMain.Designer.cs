@@ -85,12 +85,12 @@
             this.toolStripSeparatorMain1,
             this.toolStripButtonCapture,
             this.toolStripButtonSave,
-            this.toolStripButtonFolder,
             this.toolStripButtonClose,
             this.toolStripButtonAbout,
             this.toolStripButtonSettings,
             this.toolStripSeparator1,
-            this.toolStripButtonGallery});
+            this.toolStripButtonGallery,
+            this.toolStripButtonFolder});
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.helpProviderMain.SetShowHelp(this.toolStripMenu, ((bool)(resources.GetObject("toolStripMenu.ShowHelp"))));
@@ -194,13 +194,16 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.toolStripSeparator1.Visible = global::Toolkit.Properties.Settings.Default.AutoSave;
             // 
             // toolStripButtonGallery
             // 
             resources.ApplyResources(this.toolStripButtonGallery, "toolStripButtonGallery");
+            this.toolStripButtonGallery.CheckOnClick = true;
             this.toolStripButtonGallery.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonGallery.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripButtonGallery.Name = "toolStripButtonGallery";
+            this.toolStripButtonGallery.Visible = global::Toolkit.Properties.Settings.Default.AutoSave;
             this.toolStripButtonGallery.Click += new System.EventHandler(this.ToolStripButtonGallery_Click);
             // 
             // saveFileDialogMain

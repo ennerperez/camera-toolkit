@@ -42,6 +42,7 @@
             this.checkBoxAlbumName = new System.Windows.Forms.CheckBox();
             this.checkBoxAutoSave = new System.Windows.Forms.CheckBox();
             this.textBoxAutoSavePath = new System.Windows.Forms.TextBox();
+            this.checkBoxCheckForUpdates = new System.Windows.Forms.CheckBox();
             this.groupBoxAutostart.SuspendLayout();
             this.groupBoxAutoSave.SuspendLayout();
             this.SuspendLayout();
@@ -52,14 +53,14 @@
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // buttonAccept
             // 
             resources.ApplyResources(this.buttonAccept, "buttonAccept");
             this.buttonAccept.Name = "buttonAccept";
             this.buttonAccept.UseVisualStyleBackColor = true;
-            this.buttonAccept.Click += new System.EventHandler(this.buttonAccept_Click);
+            this.buttonAccept.Click += new System.EventHandler(this.ButtonAccept_Click);
             // 
             // comboBoxDevices
             // 
@@ -73,7 +74,7 @@
             resources.ApplyResources(this.buttonExamine, "buttonExamine");
             this.buttonExamine.Name = "buttonExamine";
             this.buttonExamine.UseVisualStyleBackColor = true;
-            this.buttonExamine.Click += new System.EventHandler(this.buttonExamine_Click);
+            this.buttonExamine.Click += new System.EventHandler(this.ButtonExamine_Click);
             // 
             // labelAutoSavePath
             // 
@@ -136,6 +137,15 @@
             this.textBoxAutoSavePath.Name = "textBoxAutoSavePath";
             this.textBoxAutoSavePath.Text = global::Toolkit.Properties.Settings.Default.DefaultPath;
             // 
+            // checkBoxCheckForUpdates
+            // 
+            resources.ApplyResources(this.checkBoxCheckForUpdates, "checkBoxCheckForUpdates");
+            this.checkBoxCheckForUpdates.Checked = global::Toolkit.Properties.Settings.Default.CheckForUpdates;
+            this.checkBoxCheckForUpdates.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxCheckForUpdates.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Toolkit.Properties.Settings.Default, "CheckForUpdates", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBoxCheckForUpdates.Name = "checkBoxCheckForUpdates";
+            this.checkBoxCheckForUpdates.UseVisualStyleBackColor = true;
+            // 
             // FormSettings
             // 
             this.AcceptButton = this.buttonAccept;
@@ -143,6 +153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonCancel;
+            this.Controls.Add(this.checkBoxCheckForUpdates);
             this.Controls.Add(this.groupBoxAutoSave);
             this.Controls.Add(this.groupBoxAutostart);
             this.Controls.Add(this.buttonAccept);
@@ -158,6 +169,7 @@
             this.groupBoxAutoSave.ResumeLayout(false);
             this.groupBoxAutoSave.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -176,5 +188,6 @@
         private System.Windows.Forms.GroupBox groupBoxAutostart;
         private System.Windows.Forms.GroupBox groupBoxAutoSave;
         private System.Windows.Forms.CheckBox checkBoxAlbumName;
+        private System.Windows.Forms.CheckBox checkBoxCheckForUpdates;
     }
 }

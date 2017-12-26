@@ -15,7 +15,7 @@ See the [changelog](CHANGELOG.md) for changes.
 - [x] Settings separations
 - [x] Album name
 - [x] Spanish translation
-- [ ] Gallery management
+- [x] Gallery management
 - [ ] OCR module
 
 ## Table of contents
