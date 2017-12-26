@@ -64,13 +64,13 @@
             this.contextMenuStripImage.Name = "contextMenuStripImage";
             this.helpProviderMain.SetShowHelp(this.contextMenuStripImage, ((bool)(resources.GetObject("contextMenuStripImage.ShowHelp"))));
             resources.ApplyResources(this.contextMenuStripImage, "contextMenuStripImage");
-            this.contextMenuStripImage.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripImage_Opening);
+            this.contextMenuStripImage.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStripImage_Opening);
             // 
             // toolStripMenuItemCopy
             // 
             this.toolStripMenuItemCopy.Name = "toolStripMenuItemCopy";
             resources.ApplyResources(this.toolStripMenuItemCopy, "toolStripMenuItemCopy");
-            this.toolStripMenuItemCopy.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            this.toolStripMenuItemCopy.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
             // 
             // toolStripMenu
             // 
@@ -110,7 +110,7 @@
             // 
             resources.ApplyResources(this.toolStripMenuDisconnectItem, "toolStripMenuDisconnectItem");
             this.toolStripMenuDisconnectItem.Name = "toolStripMenuDisconnectItem";
-            this.toolStripMenuDisconnectItem.Click += new System.EventHandler(this.toolStripMenuItemDisconnect_Click);
+            this.toolStripMenuDisconnectItem.Click += new System.EventHandler(this.ToolStripMenuItemDisconnect_Click);
             // 
             // toolStripSeparator2
             // 
@@ -129,7 +129,7 @@
             this.toolStripButtonCapture.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonCapture.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripButtonCapture.Name = "toolStripButtonCapture";
-            this.toolStripButtonCapture.Click += new System.EventHandler(this.toolStripButtonCapture_Click);
+            this.toolStripButtonCapture.Click += new System.EventHandler(this.ToolStripButtonCapture_Click);
             // 
             // toolStripButtonSave
             // 
@@ -137,7 +137,7 @@
             this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonSave.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
+            this.toolStripButtonSave.Click += new System.EventHandler(this.ToolStripButtonSave_Click);
             // 
             // toolStripButtonFolder
             // 
@@ -146,7 +146,7 @@
             this.toolStripButtonFolder.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripButtonFolder.Name = "toolStripButtonFolder";
             this.toolStripButtonFolder.Visible = global::Toolkit.Properties.Settings.Default.AutoSave;
-            this.toolStripButtonFolder.Click += new System.EventHandler(this.toolStripButtonFolder_Click);
+            this.toolStripButtonFolder.Click += new System.EventHandler(this.ToolStripButtonFolder_Click);
             // 
             // toolStripButtonClose
             // 
@@ -155,7 +155,7 @@
             this.toolStripButtonClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonClose.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripButtonClose.Name = "toolStripButtonClose";
-            this.toolStripButtonClose.Click += new System.EventHandler(this.toolStripButtonClose_Click);
+            this.toolStripButtonClose.Click += new System.EventHandler(this.ToolStripButtonClose_Click);
             // 
             // toolStripButtonAbout
             // 
@@ -164,7 +164,7 @@
             this.toolStripButtonAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonAbout.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripButtonAbout.Name = "toolStripButtonAbout";
-            this.toolStripButtonAbout.Click += new System.EventHandler(this.toolStripButtonAbout_Click);
+            this.toolStripButtonAbout.Click += new System.EventHandler(this.ToolStripButtonAbout_Click);
             // 
             // toolStripButtonSettings
             // 
@@ -182,13 +182,13 @@
             // 
             this.toolStripMenuItemCamera.Name = "toolStripMenuItemCamera";
             resources.ApplyResources(this.toolStripMenuItemCamera, "toolStripMenuItemCamera");
-            this.toolStripMenuItemCamera.Click += new System.EventHandler(this.toolStripMenuItemCamera_Click);
+            this.toolStripMenuItemCamera.Click += new System.EventHandler(this.ToolStripMenuItemCamera_Click);
             // 
             // toolStripMenuItemSystem
             // 
             this.toolStripMenuItemSystem.Name = "toolStripMenuItemSystem";
             resources.ApplyResources(this.toolStripMenuItemSystem, "toolStripMenuItemSystem");
-            this.toolStripMenuItemSystem.Click += new System.EventHandler(this.toolStripMenuItemSystem_Click);
+            this.toolStripMenuItemSystem.Click += new System.EventHandler(this.ToolStripMenuItemSystem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -201,19 +201,19 @@
             this.toolStripButtonGallery.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonGallery.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripButtonGallery.Name = "toolStripButtonGallery";
-            this.toolStripButtonGallery.Click += new System.EventHandler(this.toolStripButtonGallery_Click);
+            this.toolStripButtonGallery.Click += new System.EventHandler(this.ToolStripButtonGallery_Click);
             // 
             // saveFileDialogMain
             // 
             this.saveFileDialogMain.DefaultExt = "jpg";
             resources.ApplyResources(this.saveFileDialogMain, "saveFileDialogMain");
-            this.saveFileDialogMain.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogMain_FileOk);
+            this.saveFileDialogMain.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveFileDialogMain_FileOk);
             // 
             // panelCamera
             // 
+            resources.ApplyResources(this.panelCamera, "panelCamera");
             this.panelCamera.ContextMenuStrip = this.contextMenuStripImage;
             this.panelCamera.Controls.Add(this.labelPreview);
-            resources.ApplyResources(this.panelCamera, "panelCamera");
             this.panelCamera.Name = "panelCamera";
             this.helpProviderMain.SetShowHelp(this.panelCamera, ((bool)(resources.GetObject("panelCamera.ShowHelp"))));
             // 
@@ -231,6 +231,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.panelCamera);
             this.Controls.Add(this.toolStripMenu);
             this.Name = "FormMain";

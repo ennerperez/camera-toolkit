@@ -233,7 +233,7 @@
     <value>48, 48</value>
   </data>
   <data name="toolStripButtonCapture.Text" xml:space="preserve">
-    <value>&amp;Capture</value>
+    <value>Ca&amp;pture</value>
   </data>
   <data name="toolStripButtonSave.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -451,6 +451,9 @@
   <metadata name="toolTipMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>304, 17</value>
   </metadata>
+  <data name="panelCamera.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
   <data name="labelPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -510,7 +513,7 @@ To start capturing</value>
     <value>panelCamera</value>
   </data>
   <data name="&gt;&gt;panelCamera.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BufferedPanel, CameraToolkit, Version=1.0.6208.1671, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.BufferedPanel, CameraToolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelCamera.Parent" xml:space="preserve">
     <value>$this</value>
@@ -529,9 +532,6 @@ To start capturing</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -661,5 +661,11 @@ To start capturing</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="copyToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Copy</value>
+  </data>
+  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Disconnect</value>
   </data>
 </root>

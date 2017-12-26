@@ -117,11 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AlbumName" xml:space="preserve">
-    <value>Album name</value>
-  </data>
   <data name="Cancel" xml:space="preserve">
     <value>&amp;Cancel</value>
+  </data>
+  <data name="NewVersion" xml:space="preserve">
+    <value>New version {VERSION} is available. Do you want to download now?</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>&amp;OK</value>
@@ -134,5 +134,11 @@
   </data>
   <data name="PathNotFoundAndCreate" xml:space="preserve">
     <value>The selected path don't exist, do you want to create?</value>
+  </data>
+  <data name="ConfirmExit" xml:space="preserve">
+    <value>Do you want to exit without saving changes?</value>
+  </data>
+  <data name="ConfirmSave" xml:space="preserve">
+    <value>Do you want to save current file?</value>
   </data>
 </root>
