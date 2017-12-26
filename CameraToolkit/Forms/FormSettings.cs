@@ -11,7 +11,7 @@ namespace Toolkit.Forms
         {
             InitializeComponent();
 
-            Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
+            Icon = Icon.ExtractAssociatedIcon(Program.Assembly.Location);
 
             comboBoxDevices.DisplayMember = "Value";
             comboBoxDevices.ValueMember = "Key";

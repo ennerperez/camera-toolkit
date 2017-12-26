@@ -26,7 +26,7 @@ namespace Toolkit.Forms
             saveFileDialogMain.DefaultExt = Program.Formats.FirstOrDefault();
 
             // Icons
-            toolStripButtonDevices.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.linked_camera, 48, SystemColors.Control);
+            toolStripButtonDevices.SetImage(MaterialDesign.Instance, Program.Icon, 48, SystemColors.Control);
             toolStripButtonCapture.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.camera, 48, SystemColors.Control);
             toolStripButtonSave.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.save, 48, SystemColors.Control);
 

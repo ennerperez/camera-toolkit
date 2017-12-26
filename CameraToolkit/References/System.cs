@@ -1,7 +1,7 @@
 ﻿// ----------------------------------------
 // System References
-// Version 1.0.3
-// Updated 2018-12-26
+// Version 1.1.0
+// Updated 2017-12-26
 // ----------------------------------------
 
 using GitHub;
@@ -123,8 +123,8 @@ namespace System
             /// <returns>Wether or not the icon was succesfully generated</returns>
             internal static bool ConvertToIcon(string inputPath, string outputPath, int size = 16, bool preserveAspectRatio = false)
             {
-                using (FileStream inputStream = new FileStream(inputPath, IO.FileMode.Open))
-                using (FileStream outputStream = new FileStream(outputPath, IO.FileMode.OpenOrCreate))
+                using (FileStream inputStream = new FileStream(inputPath, FileMode.Open))
+                using (FileStream outputStream = new FileStream(outputPath, FileMode.OpenOrCreate))
                 {
                     return ConvertToIcon(inputStream, outputStream, size, preserveAspectRatio);
                 }
@@ -200,7 +200,7 @@ namespace System
                         maxy = Math.Max(maxy, bounds.Bottom);
                     }
 
-                    return new System.Drawing.Rectangle(0, 0, (maxx - minx), (maxy - miny));
+                    return new Rectangle(0, 0, (maxx - minx), (maxy - miny));
                 }
             }
 

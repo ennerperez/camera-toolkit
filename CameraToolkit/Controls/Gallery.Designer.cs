@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gallery));
             this.imageListThumbs = new System.Windows.Forms.ImageList(this.components);
             this.listViewItems = new System.Windows.Forms.ListView();
             this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,7 +54,7 @@
             // imageListThumbs
             // 
             this.imageListThumbs.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imageListThumbs.ImageSize = new System.Drawing.Size(48, 48);
+            resources.ApplyResources(this.imageListThumbs, "imageListThumbs");
             this.imageListThumbs.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // listViewItems
@@ -64,31 +65,25 @@
             this.columnHeaderPath,
             this.columnHeaderSize});
             this.listViewItems.ContextMenuStrip = this.contextMenuStripActions;
-            this.listViewItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.listViewItems, "listViewItems");
             this.listViewItems.FullRowSelect = true;
             this.listViewItems.LargeImageList = this.imageListThumbs;
-            this.listViewItems.Location = new System.Drawing.Point(0, 0);
             this.listViewItems.Name = "listViewItems";
-            this.listViewItems.Size = new System.Drawing.Size(240, 435);
             this.listViewItems.SmallImageList = this.imageListThumbs;
-            this.listViewItems.TabIndex = 0;
             this.listViewItems.UseCompatibleStateImageBehavior = false;
-            this.listViewItems.Visible = false;
             this.listViewItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListViewItems_MouseDoubleClick);
             // 
             // columnHeaderName
             // 
-            this.columnHeaderName.Text = "Name";
-            this.columnHeaderName.Width = 120;
+            resources.ApplyResources(this.columnHeaderName, "columnHeaderName");
             // 
             // columnHeaderPath
             // 
-            this.columnHeaderPath.Text = "Path";
+            resources.ApplyResources(this.columnHeaderPath, "columnHeaderPath");
             // 
             // columnHeaderSize
             // 
-            this.columnHeaderSize.Text = "Size";
-            this.columnHeaderSize.Width = 100;
+            resources.ApplyResources(this.columnHeaderSize, "columnHeaderSize");
             // 
             // contextMenuStripActions
             // 
@@ -98,7 +93,7 @@
             this.openToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.contextMenuStripActions.Name = "contextMenuStripActions";
-            this.contextMenuStripActions.Size = new System.Drawing.Size(108, 76);
+            resources.ApplyResources(this.contextMenuStripActions, "contextMenuStripActions");
             this.contextMenuStripActions.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStripActions_Opening);
             // 
             // viewToolStripMenuItem
@@ -110,61 +105,53 @@
             this.detailsToolStripMenuItem,
             this.tilesToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.viewToolStripMenuItem.Text = "&View";
+            resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
             // 
             // listToolStripMenuItem
             // 
             this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-            this.listToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.listToolStripMenuItem.Text = "&List";
+            resources.ApplyResources(this.listToolStripMenuItem, "listToolStripMenuItem");
             this.listToolStripMenuItem.Click += new System.EventHandler(this.ListToolStripMenuItem_Click);
             // 
             // smallIconsToolStripMenuItem
             // 
             this.smallIconsToolStripMenuItem.Name = "smallIconsToolStripMenuItem";
-            this.smallIconsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.smallIconsToolStripMenuItem.Text = "&Small icons";
+            resources.ApplyResources(this.smallIconsToolStripMenuItem, "smallIconsToolStripMenuItem");
             this.smallIconsToolStripMenuItem.Click += new System.EventHandler(this.SmallIconsToolStripMenuItem_Click);
             // 
             // largeIconsToolStripMenuItem
             // 
             this.largeIconsToolStripMenuItem.Name = "largeIconsToolStripMenuItem";
-            this.largeIconsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.largeIconsToolStripMenuItem.Text = "L&arge icons";
+            resources.ApplyResources(this.largeIconsToolStripMenuItem, "largeIconsToolStripMenuItem");
             this.largeIconsToolStripMenuItem.Click += new System.EventHandler(this.LargeIconsToolStripMenuItem_Click);
             // 
             // detailsToolStripMenuItem
             // 
             this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
-            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.detailsToolStripMenuItem.Text = "&Details";
+            resources.ApplyResources(this.detailsToolStripMenuItem, "detailsToolStripMenuItem");
             this.detailsToolStripMenuItem.Click += new System.EventHandler(this.DetailsToolStripMenuItem_Click);
             // 
             // tilesToolStripMenuItem
             // 
             this.tilesToolStripMenuItem.Name = "tilesToolStripMenuItem";
-            this.tilesToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.tilesToolStripMenuItem.Text = "&Tiles";
+            resources.ApplyResources(this.tilesToolStripMenuItem, "tilesToolStripMenuItem");
             this.tilesToolStripMenuItem.Click += new System.EventHandler(this.TilesToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(104, 6);
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.openToolStripMenuItem.Text = "&Open";
+            resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.deleteToolStripMenuItem.Text = "&Delete";
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click);
             // 
             // fileSystemWatcher
@@ -178,23 +165,17 @@
             // 
             // labelInformation
             // 
-            this.labelInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelInformation.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.labelInformation, "labelInformation");
             this.labelInformation.Name = "labelInformation";
-            this.labelInformation.Size = new System.Drawing.Size(240, 435);
-            this.labelInformation.TabIndex = 1;
-            this.labelInformation.Text = "No items was found\r\n";
-            this.labelInformation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelInformation.Visible = false;
             // 
             // Gallery
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelInformation);
             this.Controls.Add(this.listViewItems);
+            this.DoubleBuffered = true;
             this.Name = "Gallery";
-            this.Size = new System.Drawing.Size(240, 435);
             this.Load += new System.EventHandler(this.Gallery_Load);
             this.contextMenuStripActions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).EndInit();
