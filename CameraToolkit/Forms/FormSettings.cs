@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Toolkit.Forms
@@ -22,23 +23,23 @@ namespace Toolkit.Forms
             checkBoxAlbumName.DataBindings.Add("Enabled", checkBoxAutoSave, "Checked");
         }
 
-        private void buttonExamine_Click(object sender, EventArgs e)
+        private void ButtonExamine_Click(object sender, EventArgs e)
         {
             folderBrowserDialogAutoSavePath.ShowDialog();
             if (!string.IsNullOrEmpty(folderBrowserDialogAutoSavePath.SelectedPath))
                 textBoxAutoSavePath.Text = folderBrowserDialogAutoSavePath.SelectedPath;
         }
 
-        private void buttonAccept_Click(object sender, EventArgs e)
+        private void ButtonAccept_Click(object sender, EventArgs e)
         {
-            if (checkBoxAutoSave.Checked && !System.IO.Directory.Exists(textBoxAutoSavePath.Text))
+            if (checkBoxAutoSave.Checked && !Directory.Exists(textBoxAutoSavePath.Text))
             {
                 var question = MessageBox.Show(Toolkit.Messages.PathNotFoundAndCreate, Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (question == DialogResult.Yes)
                 {
                     try
                     {
-                        System.IO.Directory.CreateDirectory(textBoxAutoSavePath.Text);
+                        Directory.CreateDirectory(textBoxAutoSavePath.Text);
                     }
                     catch (Exception ex)
                     {
@@ -53,12 +54,13 @@ namespace Toolkit.Forms
                 }
             }
 
+            Properties.Settings.Default.AutoSave = checkBoxAutoSave.Checked;
             Properties.Settings.Default.DefaultDevice = comboBoxDevices.SelectedValue.ToString();
             Properties.Settings.Default.Save();
             Close();
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void ButtonCancel_Click(object sender, EventArgs e)
         {
             Close();
         }

@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.9]
+### Changed
+- Code enhancements
+
+### Fixed
+- Update checker
+- Minors bugs
+
+### Added
+- Gallery folder viewer
+
 ## [1.0.8]
 ### Changed
 - Camera tile view fix
