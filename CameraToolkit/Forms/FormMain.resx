@@ -163,13 +163,13 @@
     <value>None</value>
   </data>
   <data name="toolStripMenuDisconnectItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>133, 22</value>
   </data>
   <data name="toolStripMenuDisconnectItem.Text" xml:space="preserve">
     <value>&amp;Disconnect</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+    <value>130, 6</value>
   </data>
   <data name="toolStripButtonDevices.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -263,30 +263,6 @@
   </data>
   <data name="toolStripButtonSave.Text" xml:space="preserve">
     <value>&amp;Save</value>
-  </data>
-  <data name="toolStripButtonClose.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripButtonClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC/SURBVGhD7ddbCsMgFIRhF5Cdd1ndlmIywQMhSIhHqWOZ
-        76UXav2nbw0iIiKyopzzVp66jfgOF1wcY/ymlD7lrWY4i+/4+QiLPx5PnhE4U47nKSOuAdAyoufsUJ4Q
-        mnjTEkQXb96E0cabp0D6eFMLXSbe3IOv6ONNbcQy8bD0gFq8oR9xj8fr2nvl41yeQulHvAmkHdESRjfC
-        E0Qzoidk+ojjzvX/0OBCXNzz6+HslHgz4uJp8SIiIiIi8gdC2AHfxrEzRtNPHwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="toolStripButtonClose.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="toolStripButtonClose.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 48</value>
-  </data>
-  <data name="toolStripButtonClose.Text" xml:space="preserve">
-    <value>&amp;Close</value>
   </data>
   <data name="toolStripButtonAbout.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -530,9 +506,6 @@ To start capturing</value>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
@@ -590,42 +563,6 @@ To start capturing</value>
   <data name="&gt;&gt;toolStripButtonSave.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripButtonFolder.Name" xml:space="preserve">
-    <value>toolStripButtonFolder</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonClose.Name" xml:space="preserve">
-    <value>toolStripButtonClose</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonAbout.Name" xml:space="preserve">
-    <value>toolStripButtonAbout</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonSettings.Name" xml:space="preserve">
-    <value>toolStripButtonSettings</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemCamera.Name" xml:space="preserve">
-    <value>toolStripMenuItemCamera</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemCamera.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemSystem.Name" xml:space="preserve">
-    <value>toolStripMenuItemSystem</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
   </data>
@@ -636,6 +573,12 @@ To start capturing</value>
     <value>toolStripButtonGallery</value>
   </data>
   <data name="&gt;&gt;toolStripButtonGallery.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonFolder.Name" xml:space="preserve">
+    <value>toolStripButtonFolder</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;saveFileDialogMain.Name" xml:space="preserve">
@@ -656,16 +599,34 @@ To start capturing</value>
   <data name="&gt;&gt;helpProviderMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripMenuItemCamera.Name" xml:space="preserve">
+    <value>toolStripMenuItemCamera</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemCamera.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemSystem.Name" xml:space="preserve">
+    <value>toolStripMenuItemSystem</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonSettings.Name" xml:space="preserve">
+    <value>toolStripButtonSettings</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonAbout.Name" xml:space="preserve">
+    <value>toolStripButtonAbout</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormMain</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="copyToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Copy</value>
-  </data>
-  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Disconnect</value>
   </data>
 </root>

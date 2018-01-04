@@ -53,14 +53,14 @@
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonAccept
             // 
             resources.ApplyResources(this.buttonAccept, "buttonAccept");
             this.buttonAccept.Name = "buttonAccept";
             this.buttonAccept.UseVisualStyleBackColor = true;
-            this.buttonAccept.Click += new System.EventHandler(this.ButtonAccept_Click);
+            this.buttonAccept.Click += new System.EventHandler(this.buttonAccept_Click);
             // 
             // comboBoxDevices
             // 
@@ -74,7 +74,7 @@
             resources.ApplyResources(this.buttonExamine, "buttonExamine");
             this.buttonExamine.Name = "buttonExamine";
             this.buttonExamine.UseVisualStyleBackColor = true;
-            this.buttonExamine.Click += new System.EventHandler(this.ButtonExamine_Click);
+            this.buttonExamine.Click += new System.EventHandler(this.buttonExamine_Click);
             // 
             // labelAutoSavePath
             // 

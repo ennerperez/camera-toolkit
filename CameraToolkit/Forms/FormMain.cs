@@ -41,7 +41,6 @@ namespace Toolkit.Forms
 
             toolStripButtonSettings.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.settings, 48, SystemColors.Control);
             toolStripButtonAbout.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.info, 48, SystemColors.Control);
-            toolStripButtonClose.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.close, 48, SystemColors.Control);
 
             toolStripMenuDisconnectItem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.videocam_off, 48, toolStripMenu.BackColor);
 
@@ -50,12 +49,12 @@ namespace Toolkit.Forms
 #endif
         }
 
-        private bool IsRunning()
+        private bool isRunning()
         {
             return VideSource != null && VideSource.IsRunning;
         }
 
-        private void Item_Click(object sender, EventArgs e)
+        private void item_Click(object sender, EventArgs e)
         {
             toolStripMenuDisconnectItem.PerformClick();
 
@@ -73,10 +72,10 @@ namespace Toolkit.Forms
             try
             {
                 VideSource = new VideoCaptureDevice(Moniker);
-                VideSource.NewFrame += new NewFrameEventHandler(CaptureFrame);
+                VideSource.NewFrame += new NewFrameEventHandler(captureFrame);
                 VideSource.Start();
 
-                toolStripMenuDisconnectItem.Enabled = IsRunning();
+                toolStripMenuDisconnectItem.Enabled = isRunning();
 
                 if (Properties.Settings.Default.AskAlbumName)
                     Program.ShowInputDialog(ref Program.AlbumName, "Album");
@@ -88,10 +87,10 @@ namespace Toolkit.Forms
                 Close();
             }
 
-            labelPreview.Visible = !IsRunning();
+            labelPreview.Visible = !isRunning();
 
-            toolStripButtonCapture.Enabled = IsRunning();
-            toolStripButtonSave.Enabled = IsRunning();
+            toolStripButtonCapture.Enabled = isRunning();
+            toolStripButtonSave.Enabled = isRunning();
         }
 
         public string DeviceName { get; set; }
@@ -100,13 +99,13 @@ namespace Toolkit.Forms
 
         #region Clipboard
 
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (panelCamera.BackgroundImage != null)
                 Clipboard.SetImage(panelCamera.BackgroundImage);
         }
 
-        private void ContextMenuStripImage_Opening(object sender, CancelEventArgs e)
+        private void contextMenuStripImage_Opening(object sender, CancelEventArgs e)
         {
             toolStripMenuItemCopy.Enabled = panelCamera.BackgroundImage != null;
         }
@@ -115,7 +114,7 @@ namespace Toolkit.Forms
 
         private bool paused;
 
-        private void CaptureFrame(object sender, NewFrameEventArgs eventArgs)
+        private void captureFrame(object sender, NewFrameEventArgs eventArgs)
         {
             if (!paused)
             {
@@ -124,7 +123,7 @@ namespace Toolkit.Forms
             }
         }
 
-        private async void FormViewer_Shown(object sender, EventArgs e)
+        private async void FormMain_Shown(object sender, EventArgs e)
         {
             ToolStripMenuItem defaultDevice = null;
             foreach (var item in Program.GetDevices())
@@ -133,7 +132,7 @@ namespace Toolkit.Forms
                 {
                     Tag = item.Key
                 };
-                _item.Click += Item_Click;
+                _item.Click += item_Click;
                 _item.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.videocam, 48, toolStripMenu.BackColor);
                 toolStripButtonDevices.DropDownItems.Add(_item);
 
@@ -150,14 +149,14 @@ namespace Toolkit.Forms
                 await GitHubInfo.CheckForUpdateAsync();
         }
 
-        private void FormViewer_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             toolStripMenuDisconnectItem.PerformClick();
         }
 
-        private void SaveFileDialogMain_FileOk(object sender, CancelEventArgs e)
+        private void saveFileDialogMain_FileOk(object sender, CancelEventArgs e)
         {
-            if (IsRunning())
+            if (isRunning())
             {
                 try
                 {
@@ -177,24 +176,24 @@ namespace Toolkit.Forms
 
         #region ToolStrip
 
-        private void ToolStripButtonCapture_Click(object sender, EventArgs e)
+        private void toolStripButtonCapture_Click(object sender, EventArgs e)
         {
-            if (IsRunning())
+            if (isRunning())
                 paused = !paused;
             toolStripButtonCapture.Checked = paused;
         }
 
-        private void ToolStripMenuItemDisconnect_Click(object sender, EventArgs e)
+        private void toolStripMenuItemDisconnect_Click(object sender, EventArgs e)
         {
-            if (IsRunning())
+            if (isRunning())
             {
                 VideSource.SignalToStop();
-                VideSource.NewFrame -= new NewFrameEventHandler(CaptureFrame);
+                VideSource.NewFrame -= new NewFrameEventHandler(captureFrame);
                 VideSource = null;
                 panelCamera.BackgroundImage = null;
             }
 
-            labelPreview.Visible = !IsRunning();
+            labelPreview.Visible = !isRunning();
 
             var items = from item in toolStripButtonDevices.DropDownItems.OfType<ToolStripMenuItem>()
                         select item;
@@ -204,17 +203,17 @@ namespace Toolkit.Forms
 
             paused = false;
             toolStripButtonCapture.Checked = paused;
-            toolStripButtonCapture.Enabled = IsRunning();
-            toolStripButtonSave.Enabled = IsRunning();
+            toolStripButtonCapture.Enabled = isRunning();
+            toolStripButtonSave.Enabled = isRunning();
 
-            toolStripMenuDisconnectItem.Enabled = IsRunning();
+            toolStripMenuDisconnectItem.Enabled = isRunning();
 
             Program.AlbumName = string.Empty;
         }
 
-        private void ToolStripButtonSave_Click(object sender, EventArgs e)
+        private void toolStripButtonSave_Click(object sender, EventArgs e)
         {
-            if (IsRunning())
+            if (isRunning())
             {
                 var i = 1;
                 string filename = string.Empty;
@@ -239,13 +238,13 @@ namespace Toolkit.Forms
                 if (Properties.Settings.Default.AutoSave &&
                     !string.IsNullOrEmpty(Properties.Settings.Default.DefaultPath) &&
                     Directory.Exists(Properties.Settings.Default.DefaultPath))
-                    SaveFileDialogMain_FileOk(sender, new CancelEventArgs());
+                    saveFileDialogMain_FileOk(sender, new CancelEventArgs());
                 else
                     saveFileDialogMain.ShowDialog();
             }
         }
 
-        private void ToolStripButtonFolder_Click(object sender, EventArgs e)
+        private void toolStripButtonFolder_Click(object sender, EventArgs e)
         {
             // Settings
             if (string.IsNullOrEmpty(Properties.Settings.Default.DefaultPath) ||
@@ -261,7 +260,7 @@ namespace Toolkit.Forms
                 Process.Start(Path.Combine(Properties.Settings.Default.DefaultPath, Program.AlbumName));
         }
 
-        private void ToolStripButtonGallery_Click(object sender, EventArgs e)
+        private void toolStripButtonGallery_Click(object sender, EventArgs e)
         {
             if (!this.Controls.OfType<Controls.Gallery>().Any())
             {
@@ -282,13 +281,13 @@ namespace Toolkit.Forms
             }
         }
 
-        private void ToolStripMenuItemCamera_Click(object sender, EventArgs e)
+        private void toolStripMenuItemCamera_Click(object sender, EventArgs e)
         {
-            if (IsRunning())
+            if (isRunning())
                 VideSource.DisplayPropertyPage(this.Handle);
         }
 
-        private void ToolStripMenuItemSystem_Click(object sender, EventArgs e)
+        private void toolStripMenuItemSystem_Click(object sender, EventArgs e)
         {
             var child = new FormSettings();
             child.ShowDialog();
@@ -297,13 +296,13 @@ namespace Toolkit.Forms
             toolStripSeparator1.Visible = Properties.Settings.Default.AutoSave;
         }
 
-        private void ToolStripButtonAbout_Click(object sender, EventArgs e)
+        private void toolStripButtonAbout_Click(object sender, EventArgs e)
         {
             var child = new FormAbout();
             child.ShowDialog();
         }
 
-        private void ToolStripButtonClose_Click(object sender, EventArgs e)
+        private void toolStripButtonClose_Click(object sender, EventArgs e)
         {
             Close();
         }

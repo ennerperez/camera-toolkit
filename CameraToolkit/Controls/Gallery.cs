@@ -16,11 +16,6 @@ namespace Toolkit.Controls
             InitializeComponent();
         }
 
-        private void ListViewItems_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            OpenToolStripMenuItem_Click(sender, e);
-        }
-
         private async void Gallery_Load(object sender, EventArgs e)
         {
             listViewItems.DataBindings.Add("BackColor", this, "BackColor");
@@ -32,10 +27,22 @@ namespace Toolkit.Controls
                 Width = (int)((s as Form).Width * 0.3);
             };
             fileSystemWatcher.Path = Path.Combine(Properties.Settings.Default.DefaultPath, Program.AlbumName);
-            await PopulateAsync();
+            await populateAsync();
         }
 
-        private async Task PopulateAsync()
+        public void Close()
+        {
+            fileSystemWatcher.EnableRaisingEvents = false;
+            fileSystemWatcher = null;
+            Parent.Controls.Remove(this);
+            Dispose();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+        }
+
+        #region FileSystemWatcher
+
+        private async Task populateAsync()
         {
             var path = new DirectoryInfo(fileSystemWatcher.Path);
             var files = path.GetFiles().Where(m => Program.Formats.Contains(m.Extension)).ToList();
@@ -68,33 +75,40 @@ namespace Toolkit.Controls
             }));
         }
 
-        private async void FileSystemWatcher_Changed(object sender, FileSystemEventArgs e)
+        private async void fileSystemWatcher_Changed(object sender, FileSystemEventArgs e)
         {
             if (Program.Formats.Contains(Path.GetExtension(e.FullPath)))
-                await PopulateAsync();
+                await populateAsync();
         }
 
-        private async void FileSystemWatcher_Renamed(object sender, RenamedEventArgs e)
+        private async void fileSystemWatcher_Renamed(object sender, RenamedEventArgs e)
         {
             if (Program.Formats.Contains(Path.GetExtension(e.FullPath)) || Program.Formats.Contains(Path.GetExtension(e.OldFullPath)))
-                await PopulateAsync();
+                await populateAsync();
         }
 
-        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        #endregion FileSystemWatcher
+
+        private void listViewItems_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (listViewItems.SelectedItems != null && listViewItems.SelectedItems.OfType<ListViewItem>().Any())
-                foreach (var item in listViewItems.SelectedItems)
-                    Process.Start((item as ListViewItem).SubItems[1].Text);
+            openToolStripMenuItem_Click(sender, e);
         }
 
-        private void ContextMenuStripActions_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        private void contextMenuStripActions_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
             var hasItemSelected = (listViewItems.SelectedItems != null && listViewItems.SelectedItems.OfType<ListViewItem>().Any());
             openToolStripMenuItem.Enabled = hasItemSelected;
             deleteToolStripMenuItem.Enabled = hasItemSelected;
         }
 
-        private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listViewItems.SelectedItems != null && listViewItems.SelectedItems.OfType<ListViewItem>().Any())
+                foreach (var item in listViewItems.SelectedItems)
+                    Process.Start((item as ListViewItem).SubItems[1].Text);
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (listViewItems.SelectedItems != null && listViewItems.SelectedItems.OfType<ListViewItem>().Any())
                 foreach (var item in listViewItems.SelectedItems)
@@ -109,37 +123,27 @@ namespace Toolkit.Controls
                 }
         }
 
-        public void Close()
-        {
-            fileSystemWatcher.EnableRaisingEvents = false;
-            fileSystemWatcher = null;
-            Parent.Controls.Remove(this);
-            Dispose();
-            GC.WaitForPendingFinalizers();
-            GC.Collect();
-        }
-
-        private void ListToolStripMenuItem_Click(object sender, EventArgs e)
+        private void listToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listViewItems.View = View.List;
         }
 
-        private void SmallIconsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void smallIconsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listViewItems.View = View.SmallIcon;
         }
 
-        private void LargeIconsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void largeIconsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listViewItems.View = View.LargeIcon;
         }
 
-        private void DetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void detailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listViewItems.View = View.Details;
         }
 
-        private void TilesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listViewItems.View = View.Tile;
         }

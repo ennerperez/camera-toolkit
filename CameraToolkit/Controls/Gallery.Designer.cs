@@ -71,7 +71,7 @@
             this.listViewItems.Name = "listViewItems";
             this.listViewItems.SmallImageList = this.imageListThumbs;
             this.listViewItems.UseCompatibleStateImageBehavior = false;
-            this.listViewItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListViewItems_MouseDoubleClick);
+            this.listViewItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewItems_MouseDoubleClick);
             // 
             // columnHeaderName
             // 
@@ -94,7 +94,7 @@
             this.deleteToolStripMenuItem});
             this.contextMenuStripActions.Name = "contextMenuStripActions";
             resources.ApplyResources(this.contextMenuStripActions, "contextMenuStripActions");
-            this.contextMenuStripActions.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStripActions_Opening);
+            this.contextMenuStripActions.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripActions_Opening);
             // 
             // viewToolStripMenuItem
             // 
@@ -111,31 +111,31 @@
             // 
             this.listToolStripMenuItem.Name = "listToolStripMenuItem";
             resources.ApplyResources(this.listToolStripMenuItem, "listToolStripMenuItem");
-            this.listToolStripMenuItem.Click += new System.EventHandler(this.ListToolStripMenuItem_Click);
+            this.listToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem_Click);
             // 
             // smallIconsToolStripMenuItem
             // 
             this.smallIconsToolStripMenuItem.Name = "smallIconsToolStripMenuItem";
             resources.ApplyResources(this.smallIconsToolStripMenuItem, "smallIconsToolStripMenuItem");
-            this.smallIconsToolStripMenuItem.Click += new System.EventHandler(this.SmallIconsToolStripMenuItem_Click);
+            this.smallIconsToolStripMenuItem.Click += new System.EventHandler(this.smallIconsToolStripMenuItem_Click);
             // 
             // largeIconsToolStripMenuItem
             // 
             this.largeIconsToolStripMenuItem.Name = "largeIconsToolStripMenuItem";
             resources.ApplyResources(this.largeIconsToolStripMenuItem, "largeIconsToolStripMenuItem");
-            this.largeIconsToolStripMenuItem.Click += new System.EventHandler(this.LargeIconsToolStripMenuItem_Click);
+            this.largeIconsToolStripMenuItem.Click += new System.EventHandler(this.largeIconsToolStripMenuItem_Click);
             // 
             // detailsToolStripMenuItem
             // 
             this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
             resources.ApplyResources(this.detailsToolStripMenuItem, "detailsToolStripMenuItem");
-            this.detailsToolStripMenuItem.Click += new System.EventHandler(this.DetailsToolStripMenuItem_Click);
+            this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);
             // 
             // tilesToolStripMenuItem
             // 
             this.tilesToolStripMenuItem.Name = "tilesToolStripMenuItem";
             resources.ApplyResources(this.tilesToolStripMenuItem, "tilesToolStripMenuItem");
-            this.tilesToolStripMenuItem.Click += new System.EventHandler(this.TilesToolStripMenuItem_Click);
+            this.tilesToolStripMenuItem.Click += new System.EventHandler(this.tilesToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -146,22 +146,22 @@
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click);
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // fileSystemWatcher
             // 
             this.fileSystemWatcher.EnableRaisingEvents = true;
             this.fileSystemWatcher.SynchronizingObject = this;
-            this.fileSystemWatcher.Changed += new System.IO.FileSystemEventHandler(this.FileSystemWatcher_Changed);
-            this.fileSystemWatcher.Created += new System.IO.FileSystemEventHandler(this.FileSystemWatcher_Changed);
-            this.fileSystemWatcher.Deleted += new System.IO.FileSystemEventHandler(this.FileSystemWatcher_Changed);
-            this.fileSystemWatcher.Renamed += new System.IO.RenamedEventHandler(this.FileSystemWatcher_Renamed);
+            this.fileSystemWatcher.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_Changed);
+            this.fileSystemWatcher.Created += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_Changed);
+            this.fileSystemWatcher.Deleted += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_Changed);
+            this.fileSystemWatcher.Renamed += new System.IO.RenamedEventHandler(this.fileSystemWatcher_Renamed);
             // 
             // labelInformation
             // 
