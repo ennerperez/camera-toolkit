@@ -295,13 +295,13 @@
     <value>False</value>
   </data>
   <data name="toolStripMenuItemCamera.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>115, 22</value>
   </data>
   <data name="toolStripMenuItemCamera.Text" xml:space="preserve">
     <value>&amp;Camera</value>
   </data>
   <data name="toolStripMenuItemSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>115, 22</value>
   </data>
   <data name="toolStripMenuItemSystem.Text" xml:space="preserve">
     <value>&amp;System</value>
@@ -562,6 +562,36 @@ To start capturing</value>
   </data>
   <data name="&gt;&gt;toolStripButtonSave.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonClose.Name" xml:space="preserve">
+    <value>toolStripButtonClose</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonAbout.Name" xml:space="preserve">
+    <value>toolStripButtonAbout</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonSettings.Name" xml:space="preserve">
+    <value>toolStripButtonSettings</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemCamera.Name" xml:space="preserve">
+    <value>toolStripMenuItemCamera</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemCamera.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemSystem.Name" xml:space="preserve">
+    <value>toolStripMenuItemSystem</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
